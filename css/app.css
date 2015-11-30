@@ -6,7 +6,12 @@ color: #fff;
   font-weight: 100;
   letter-spacing: 0.025em;
   line-height: 1.75em;
- background: #000;
+ 
+
+background: #4b6cb7; /* fallback for old browsers */
+background: -webkit-linear-gradient(to left, #4b6cb7 , #182848); /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to left, #4b6cb7 , #182848); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+        
  font-family: 'Roboto', sans-serif;
  
 }  
@@ -17,9 +22,19 @@ width: 100%;
 min-width: 300px;
 margin: 0; padding: 0;
 }
-
+#map, #map2{ border: 10px solid #fff; box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.44);}
 #map{ min-height: 100% ;}
-
+#map2.formmap{ min-height: 400px; width: 80%; margin: 0px auto;}
+  .colorgraph {
+  height: 7px;
+  border-top: 0;
+  background: #c4e17f;
+  border-radius: 5px;
+  background-image: -webkit-linear-gradient(left, #c4e17f, #c4e17f 12.5%, #f7fdca 12.5%, #f7fdca 25%, #fecf71 25%, #fecf71 37.5%, #f0776c 37.5%, #f0776c 50%, #db9dbe 50%, #db9dbe 62.5%, #c49cde 62.5%, #c49cde 75%, #669ae1 75%, #669ae1 87.5%, #62c2e4 87.5%, #62c2e4);
+  background-image: -moz-linear-gradient(left, #c4e17f, #c4e17f 12.5%, #f7fdca 12.5%, #f7fdca 25%, #fecf71 25%, #fecf71 37.5%, #f0776c 37.5%, #f0776c 50%, #db9dbe 50%, #db9dbe 62.5%, #c49cde 62.5%, #c49cde 75%, #669ae1 75%, #669ae1 87.5%, #62c2e4 87.5%, #62c2e4);
+  background-image: -o-linear-gradient(left, #c4e17f, #c4e17f 12.5%, #f7fdca 12.5%, #f7fdca 25%, #fecf71 25%, #fecf71 37.5%, #f0776c 37.5%, #f0776c 50%, #db9dbe 50%, #db9dbe 62.5%, #c49cde 62.5%, #c49cde 75%, #669ae1 75%, #669ae1 87.5%, #62c2e4 87.5%, #62c2e4);
+  background-image: linear-gradient(to right, #c4e17f, #c4e17f 12.5%, #f7fdca 12.5%, #f7fdca 25%, #fecf71 25%, #fecf71 37.5%, #f0776c 37.5%, #f0776c 50%, #db9dbe 50%, #db9dbe 62.5%, #c49cde 62.5%, #c49cde 75%, #669ae1 75%, #669ae1 87.5%, #62c2e4 87.5%, #62c2e4);
+}
 .gm-style-iw{
   color: #000;
 }
@@ -127,6 +142,7 @@ span.menutx{
     font-weight: 300;
     color: #141c22;
     outline: none;
+    transition: all 0.5s cubic-bezier(0.68, -0.01, 0.32, 1);
 }
 .home__search__icon {
     top: 6px;
@@ -151,7 +167,12 @@ span.menutx{
   right: 24%;
  transition: all 0.7s ease;
 }
+ 
 
+.home__search:focus {
+    box-shadow: 0 0 0px 5px rgba(113, 154, 106, 0.64);
+    /* transition: all 0.5s cubic-bezier(0.68, -0.01, 0.32, 1); */
+}
 @media screen and (max-width: 780px){
 .formsearch{
   position: absolute;

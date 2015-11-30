@@ -23,8 +23,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 | a PHP script and you can easily do that on your own.
 |
 */
-$config['base_url'] = 'localhost/codeigniter';
+$ip = $_SERVER['SERVER_ADDR'];
+$ip = ($ip == '::1' ? '127.0.0.1' : $ip);
+$user = get_current_user();
 
+$config['base_url'] = 'http://'.$ip.'/ntemap';
 /*
 |--------------------------------------------------------------------------
 | Index File
