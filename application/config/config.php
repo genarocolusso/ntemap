@@ -22,12 +22,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 | If you need to allow multiple domains, remember that this file is still
 | a PHP script and you can easily do that on your own.
 |
-*/
-$ip = $_SERVER['SERVER_ADDR'];
-$ip = ($ip == '::1' ? '127.0.0.1' : $ip);
-$user = get_current_user();
+*/ 
 
-$config['base_url'] = 'http://'.$ip.'/ntemap';
+$config['base_url'] = 'http://localhost/ntemap';
 /*
 |--------------------------------------------------------------------------
 | Index File

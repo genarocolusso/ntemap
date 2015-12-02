@@ -23,7 +23,7 @@
   <!-- Important Owl stylesheet --> 
 <!-- Default Theme --> 
   <link rel="stylesheet" href="<?php echo base_url(); ?>css/app.css"> 
-      
+  <link rel="stylesheet" href="https://cdn.datatables.net/1.10.10/css/dataTables.bootstrap.min.css">    
 <!-- Include js plugin -->
 
     <link rel="icon" type="image/png" href="<?php echo base_url(); ?>img/icon.png">

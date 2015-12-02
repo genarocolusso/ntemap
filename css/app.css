@@ -22,7 +22,7 @@ width: 100%;
 min-width: 300px;
 margin: 0; padding: 0;
 }
-#map, #map2{ border: 10px solid #fff; box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.44);}
+  #map2{ border: 10px solid #fff; box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.44);}
 #map{ min-height: 100% ;}
 #map2.formmap{ min-height: 400px; width: 80%; margin: 0px auto;}
   .colorgraph {
@@ -38,7 +38,27 @@ margin: 0; padding: 0;
 .gm-style-iw{
   color: #000;
 }
+.msgaviso{
+       
+    position: fixed;
+    width: 100%;
+    padding: 60px;
+    font-size: 60px;
+    color: #fff;
+    background: rgba(28, 219, 181,0.7);
+    
+    font-weight: lighter;
+    opacity: 0;
+    z-index: -1000;
 
+    animation: all 0.4s cubic-bezier(0.56, -0.02, 0.58, 1);
+}
+.msgaviso.active{
+  opacity: 1;
+   z-index: 99;
+  
+    animation: all 0.4s cubic-bezier(0.56, -0.02, 0.58, 1);
+}
 .overall{ 
   position: fixed;
   min-height: 90%;
@@ -182,4 +202,7 @@ span.menutx{
   right: 10%; 
 }
 
+}
+#example tr.odd {
+    color: #000;
 }

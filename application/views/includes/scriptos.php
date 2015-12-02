@@ -4,7 +4,7 @@
        <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?libraries=places&sensor=false"></script>
      <script src="<?php echo base_url(); ?>js/bootstrap.min.js"></script>
          <script src="<?php echo base_url(); ?>js/jquery.scrollTo.min.js"></script>  
- 
+         <script src="https://cdn.datatables.net/1.10.10/js/jquery.dataTables.min.js"></script> 
          <script src="<?php echo base_url(); ?>js/wow.min.js"></script>
          <script>
               new WOW().init();
