@@ -17,7 +17,8 @@ class Registro_model extends CI_Model {
              
         ));	
          
-         	   echo "Cadastrado com sucesso!!";
+         	   echo "<p>".$this->input->post('nome', TRUE)."</p> ".
+               "Cadastrado com sucesso!!";
          }
         // Inserção dos dados
        

@@ -35,3 +35,4 @@
 </head>
  
 <body class="preload">
+<div class="msgaviso"> Aviso </div>
