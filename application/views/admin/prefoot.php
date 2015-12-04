@@ -3,7 +3,7 @@
                 <span class="pull-right">2.0 <a href=""><i class="fa fa-long-arrow-up"></i></a></span> © 2015 Copyright.
             </div>
         </footer>
-        <div>
+        </div>
             <!-- Javascript Libs -->
             <script type="text/javascript" src="<?php echo base_url();?>flatadmin/bower_components/jquery/dist/jquery.min.js"></script>
             <script type="text/javascript" src="<?php echo base_url();?>flatadmin/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
@@ -21,9 +21,7 @@
             <script type="text/javascript" src="<?php echo base_url();?>flatadmin/js/app.js"></script>
             <script type="text/javascript" src="<?php echo base_url();?>flatadmin/js/index.js"></script>
             <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?libraries=places&sensor=false"></script>
-            <script src="<?php echo base_url(); ?>js/bootstrap.min.js"></script>
-             <script src="<?php echo base_url(); ?>js/jquery.scrollTo.min.js"></script>  
-             <script src="https://cdn.datatables.net/1.10.10/js/jquery.dataTables.min.js"></script> 
+            
              <script src="<?php echo base_url(); ?>js/wow.min.js"></script>
              <script>
                   new WOW().init();
@@ -31,6 +29,42 @@
         <script type="text/javascript">
             $(document).ready(function(){
                  
-              
+              $('#example').DataTable();
+             
+                $("#botaopraenviarpromapa").click(function(){
+                        //alert("ola");
+                       
+                        $.ajax({ 
+
+                                url: 'painel/cadastrar',
+                                type: 'POST',
+                                data: $("#addform").serializeArray(),                                
+                                success: function(msg){
+                                     
+                                     
+                                      $(".msgaviso").html(msg);
+                                      $(".msgaviso").addClass("active");
+                                      setInterval(function(){ $(".msgaviso").removeClass("active");  
+
+                                       
+                                        $.ajax({
+                                          url:        'painel/mostratabela',
+                                          type:       'POST',
+                                          cache:      false,
+                                          success: function(gg){        
+                                          alert(gg);            
+                                              $('.tabeladospolos').html(gg);
+                                                 $('#example').DataTable();
+                                          }           
+                                        });
+                                          }, 5000);
+                                         
+
+                                        $("#addform").reset();
+                                    
+                                    }
+                            });
+                        return false;
+                    });
             });     
         </script>

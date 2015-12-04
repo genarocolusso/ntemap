@@ -8,3 +8,9 @@
   });
 
 }).call(this);
+ $(document).ready(function(){
+                 
+             
+             
+                
+            }); 

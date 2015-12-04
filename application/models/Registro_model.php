@@ -23,4 +23,28 @@ class Registro_model extends CI_Model {
         // Inserção dos dados
        
     }
+
+    public function deletar(){
+         
+            $id = $this->input->post('deleted');
+            $this->db->where('id', $id);
+            $this->db->delete('polos'); 
+         
+               echo "Deletado!";
+         
+    }
+    public function polos(){
+        $data['polos'] = [];
+    
+        $this->db->select("*");
+        $this->db->from('polos');
+        $query = $this->db->get();
+        if ($query->num_rows() > 0)
+        {
+            $data['polos'] = $query->result_array();
+        }
+
+        return $data['polos'];
+    }
+
 }

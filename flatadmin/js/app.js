@@ -1,3 +1,5 @@
+
+
 (function() {
   $(function() {
     $(".navbar-expand-toggle").click(function() {
@@ -36,9 +38,12 @@
   });
 
 
-  $('#example').DataTable();
-             
-                $("#botaopraenviarpromapa").click(function(){
+ 
+
+}).call(this);
+ $('#example').DataTable();
+ 
+ $("#botaopraenviarpromapa").click(function(){
                         //alert("ola");
                        
                         $.ajax({ 
@@ -51,15 +56,28 @@
                                      
                                       $(".msgaviso").html(msg);
                                       $(".msgaviso").addClass("active");
-                                      setInterval(function(){ $(".msgaviso").removeClass("active"); }, 5000);
-                                        jQuery.fn.reset = function(){
+                                      setTimeout(function(){ $(".msgaviso").removeClass("active");  
+
+                                       
+                                        $.ajax({
+                                          url:        'painel/mostratabela',
+                                          type:       'POST',
+                                          cache:      false,
+                                          success: function(gg){        
+                                                     
+                                              $('.tabeladospolos').html(gg);
+                                                 $('#example').DataTable();
+                                          }           
+                                        });
+                                          }, 5000);
+                                         
+                                               jQuery.fn.reset = function(){
                                                 $(this).each(function(){ this.reset();});
                                             }
-                                        $("#addform").reset();
+                                          
+                                         document.getElementById("addform").reset();
                                     
                                     }
                             });
                         return false;
                     });
-
-}).call(this);

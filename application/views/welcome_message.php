@@ -1,15 +1,35 @@
 <?php $this->load->view("includes/header") ?>
  
-   <div class='overall'>
+    <div class='overall'>
     <div class="menu">
-    <div class="container">
-      <h2> Map Menu </h2>
-        <div class="coords">
-       
-        </div>
+     
+      <div class="row centralmenu">
 
+  <div class="col-md-12">
+      <div class="socialicon">
+      <i class="fa fa-file  "></i> Todos os Polos
+      </div>
+  </div> 
+  <div class="col-md-12">
+      <div class="socialicon">
+      <i class="fa fa-cab   "></i> Polos Ativos
+      </div>
+  </div> 
+  <div class="col-md-12">
+      <div class="socialicon">
+      <i class="fa fa-fighter-jet "></i> Polos Inativos
+      </div>
+  </div> 
+  <div class="col-md-12">
+      <div class="socialicon">
+      <i class="fa fa-cc-visa  "></i> 
+      </div>
+  </div> 
+
+
+      </div>
   </div>
- </div>
+ 
   </div>
 
 <div class="thenav">
@@ -42,6 +62,17 @@
        
   
 <?php $this->load->view("includes/scriptos") ?>
-
+      
+  
+<?php $this->load->view("includes/scriptos") ?>
+ <?php
+$ar = $polos;
+?>
+<script type="text/javascript">
+var locations = <?php echo json_encode($ar) ?>;
+// ["apple","orange",1,false,null,true,8];
+// access 4th element in array
+ 
+</script>
          <script src="<?php echo base_url(); ?>js/custom.js"></script>
 <?php $this->load->view("includes/footer") ?>

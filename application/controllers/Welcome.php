@@ -20,8 +20,17 @@ class Welcome extends CI_Controller {
 	 */
 	public function index()
 	{ $this->load->helper('url');
+$data['polos'] = [];
+	
+		$this->db->select("*");
+		$this->db->from('polos');
+		$query = $this->db->get();
+		if ($query->num_rows() > 0)
+		{
+		    $data['polos'] = $query->result_array();
+		}
 
 	 
-		$this->load->view('welcome_message');
+		$this->load->view('welcome_message',$data);
 	}
 }

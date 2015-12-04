@@ -23,8 +23,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 | a PHP script and you can easily do that on your own.
 |
 */ 
+$ip = $_SERVER['SERVER_ADDR'];
+$ip = ($ip == '::1' ? 'localhost' : $ip);
+$user = get_current_user();
 
-$config['base_url'] = 'http://localhost/ntemap';
+$config['base_url'] = 'http://'.$ip.'/ntemap';
 /*
 |--------------------------------------------------------------------------
 | Index File

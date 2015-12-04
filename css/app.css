@@ -60,14 +60,16 @@ margin: 0; padding: 0;
     animation: all 0.4s cubic-bezier(0.56, -0.02, 0.58, 1);
 }
 .overall{ 
-  position: fixed;
-  min-height: 90%;
-  width: 100%; 
-  z-index:-3;
-  margin-top:63px;
-  opacity: 0; 
-  background: rgba(76, 117, 171, 0.7);
+      position: absolute;
+    min-height: 400px;
+    width: 250px;
+    z-index: -3;
+    top: 62px;
+    right: 30px;
+    opacity: 0;
+    background: rgba(255, 255, 255, 0.7);
   transition: all 400ms ease-in-out;
+  border-left: 6px solid rgb(113, 153, 185);
 }
 .overall.active{
  opacity: 1;
@@ -206,3 +208,22 @@ span.menutx{
 #example tr.odd {
     color: #000;
 }
+.row.centralmenu {
+    
+}
+
+.socialicon {
+     color: #000;
+    padding: 10px;
+    transition: all 0.3s cubic-bezier(0.84, -0.06, 0.27, 0.85);
+    transform: scale(1.0); 
+        text-align: left;
+    margin: 0px 40px;
+    border-radius: 10px;
+}
+
+.socialicon:hover {
+    transform: scale(1.2); 
+}
+.fa{transform: scale(1.5);
+    margin-right: 15px;}
