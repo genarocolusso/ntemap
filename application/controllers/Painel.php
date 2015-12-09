@@ -33,6 +33,17 @@ class Painel extends CI_Controller {
 	 
 		$this->load->view('painel', $data);
 	}
+	public function poloinfos(){
+
+
+		$data['polos'] = $this->registro_model->polos();
+	
+	 
+		$this->load->view('painelpolos', $data);
+
+
+	}
+
 
 	public function cadastrar(){
         
@@ -47,7 +58,6 @@ class Painel extends CI_Controller {
 	          echo $this->load->view('admin/tabelapolos', $data, true); // returns view as data
 	     
 	    
-
 
     }
 

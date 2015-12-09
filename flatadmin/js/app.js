@@ -48,7 +48,7 @@
                        
                         $.ajax({ 
 
-                                url: 'painel/cadastrar',
+                                url: 'cadastrar',
                                 type: 'POST',
                                 data: $("#addform").serializeArray(),                                
                                 success: function(msg){
@@ -60,7 +60,7 @@
 
                                        
                                         $.ajax({
-                                          url:        'painel/mostratabela',
+                                          url:        'mostratabela',
                                           type:       'POST',
                                           cache:      false,
                                           success: function(gg){        
