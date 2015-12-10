@@ -83,4 +83,31 @@ class Registro_model extends CI_Model {
         return $data['polos'];
     }
 
+     public function atualizar(){
+        
+        $data = array(
+               
+               'contato' => $this->input->post('contato', TRUE),
+               'email' => $this->input->post('email', TRUE),
+               'coordenacao' => $this->input->post('coordenacao', TRUE),
+               'coordemail' => $this->input->post('coordemail', TRUE),
+               'endereco' => $this->input->post('endereco', TRUE) 
+            );
+        $this->db->where('idpolo', $this->input->post('polo'));
+        $this->db->update('poloinfo', $data);
+            Echo "Polo Atualizado!";
+    }
+
+
+    public function somapolos(){
+    $query =  $this->db->query("SELECT * FROM  `polos` , `poloinfo`   WHERE  polos.id = poloinfo.idpolo");        
+          
+        if ($query->num_rows() > 0)
+        {
+            $data['polos'] = $query->result_array();
+        }
+
+        return $data['polos'];
+    }
+
 }

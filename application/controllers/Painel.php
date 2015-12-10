@@ -36,7 +36,7 @@ class Painel extends CI_Controller {
 	public function poloinfos(){
 
 
-		$data['polos'] = $this->registro_model->polos();
+		$data['polos'] = $this->registro_model->somapolos();
 	
 	 
 		$this->load->view('painelpolos', $data);
@@ -50,14 +50,27 @@ class Painel extends CI_Controller {
         $this->registro_model->cadastrar();
         
     }
+    	public function atualizarpolo(){
+        
+        $this->registro_model->atualizar();
+        
+    }
 
     public function mostratabela(){
     	 
         
 	     $data['polos'] = $this->registro_model->polos();  
-	          echo $this->load->view('admin/tabelapolos', $data, true); // returns view as data
+	     echo $this->load->view('admin/tabelapolos', $data, true); // returns view as data
 	     
 	    
+
+    }
+     public function mostradadosatualizados(){
+    	 
+        
+	     $data['polos'] = $this->registro_model->somapolos();  
+	     echo $this->load->view('admin/editpolostable', $data, true); // returns view as data
+	      
 
     }
 

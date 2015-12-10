@@ -81,3 +81,39 @@
                             });
                         return false;
                     });
+
+
+ $("#atualizarpolo").click(function(){
+                        //alert("ola"); 
+                        $.ajax({ 
+
+                                url: BASE_URL+'painel/atualizarpolo',
+                                type: 'POST',
+                                data: $("#infoform").serializeArray(),                                
+                                success: function(msg){ 
+                                     
+                                      $(".msgaviso").html(msg);
+                                      $(".msgaviso").addClass("active");
+                                      setTimeout(function(){ $(".msgaviso").removeClass("active");  
+                                           $.ajax({
+                                          url:        BASE_URL+'painel/mostradadosatualizados',
+                                          type:       'POST',
+                                          cache:      false,
+                                          success: function(gg){        
+                                                     
+                                              $('.message-list').html(gg);
+                                                 
+                                          }           
+                                        });
+                                          }, 4000);
+                                         
+                                               jQuery.fn.reset = function(){
+                                                $(this).each(function(){ this.reset();});
+                                            }
+                                          
+                                         document.getElementById("infoform").reset();
+                                    
+                                    }
+                            });
+                        return false;
+                    });

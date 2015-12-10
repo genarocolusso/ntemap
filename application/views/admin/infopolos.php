@@ -66,22 +66,27 @@
                           
                                 <?php
                                  
-                                    $attr = 'id="addform"'; //The form will have the id 'my_form'
-                                 echo form_open_multipart('index.php/painel/cadastrarpolo',$attr);
+                                    $attr = 'id="infoform"'; //The form will have the id 'my_form'
+                                 echo form_open_multipart('',$attr);
                                   ?>
 
                                 <fieldset>
                                  
                                 <h1 class="text-center"> Adicionar Informação do Polo </h1>
                                 <!-- Text input-->
+
                                 <div class="form-group">
-                                  <label class="col-md-4 control-label" for="nome">Polo</label>  
+                                  <label class="col-md-4 control-label" for="selectbasic">Polo</label>
                                   <div class="col-md-8">
-                                  <input id="polo" name="polo" type="text" placeholder="Polo" class="form-control input-md" required="">
-                                    
+                                    <select id="selectbasic" name="polo" class="form-control">
+                                     <?php foreach ($polos as $key) { ?>
+                                         <option value="<?= $key['idpolo']?>"><?= $key['name']?></option>
+                                     <?php } ?>
+                                     
+                                       
+                                    </select>
                                   </div>
                                 </div>
-
                                 <!-- Text input-->
                                 <div class="form-group">
                                   <label class="col-md-4 control-label" for="latitude">Contato</label>  
@@ -125,7 +130,7 @@
                                 <div class="form-group">
                                   <label class="col-md-4 control-label" for="singlebutton"> </label>
                                   <div class="col-md-8">
-                                    <button id="botaopraenviarpromapa" name="singlebutton" class="btn btn-primary">Atualizar Informação</button>
+                                    <button id="atualizarpolo" name="singlebutton" class="btn btn-primary">Atualizar Informação</button>
                                   </div>
                                 </div>
 
@@ -174,38 +179,9 @@
                                 </div>
                                 <div class="card-body no-padding">
                                     <ul class="message-list">
-                                        <a href="#">
-                                            <li>
-                                                <img src=" " class="profile-img pull-left">
-                                                <div class="message-block">
-                                                    <div><span class="username">Polo de Santa Maria, RS - Brazil</span> <span class="message-datetime">100 Alunos</span>
-                                                    </div>
-                                                    <div class="message"> Ainda sem informação.</div>
-                                                </div>
-                                            </li>
-                                        </a>
-                                        <a href="#">
-                                            <li>
-                                                <img src="" class="profile-img pull-left">
-                                                <div class="message-block">
-                                                    <div><span class="username">Polo de Caxias do Sul, RS - Brazil</span> <span class="message-datetime">10 Alunos</span>
-                                                    </div>
-                                                    <div class="message">Endereço: Rua Cacilda do centro, 500 apto 600, 97044-344.</div>
-                                                    <div class="message">Email: MariadaSilva@maildo.com</div>
-                                                </div>
-                                            </li>
-                                        </a>
-                                         <a href="#">
-                                            <li>
-                                                <img src="" class="profile-img pull-left">
-                                                <div class="message-block">
-                                                    <div><span class="username">Polo de Santana do Livramento, RS - Brazil</span> <span class="message-datetime">70 Alunos</span>
-                                                    </div>
-                                                    <div class="message">Endereço: Rua Cacilda do centro, 500 apto 600, 97044-344.</div>
-                                                    <div class="message">Email: MariadaSilva@maildo.com</div>
-                                                </div>
-                                            </li>
-                                        </a>
+                                    <?php $this->load->view('admin/editpolostable'); ?>
+                                       
+                                        
                                          <a href="#">
                                             <li>
                                                 <img src="" class="profile-img pull-left">
