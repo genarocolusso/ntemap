@@ -52,6 +52,9 @@
     transition: all 0.4s cubic-bezier(0.56, -0.02, 0.58, 1);
 }
     </style>
+    <script type="text/javascript">
+    var BASE_URL = "<?php echo base_url();?>";
+    </script>
 </head>
 
 <body class="flat-blue">

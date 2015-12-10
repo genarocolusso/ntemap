@@ -67,7 +67,7 @@
                                 <?php
                                  
                                     $attr = 'id="addform"'; //The form will have the id 'my_form'
-                                 echo form_open_multipart('cadastrar',$attr);
+                                 echo form_open_multipart(' ',$attr);
                                   ?>
 
                                 <fieldset>

@@ -48,7 +48,7 @@
                        
                         $.ajax({ 
 
-                                url: 'cadastrar',
+                                url: BASE_URL+'index.php/painel/cadastrar',
                                 type: 'POST',
                                 data: $("#addform").serializeArray(),                                
                                 success: function(msg){
