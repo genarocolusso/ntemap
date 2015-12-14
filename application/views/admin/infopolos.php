@@ -105,7 +105,7 @@
                                 <div class="form-group">
                                   <label class="col-md-4 control-label" for="latitude">Email</label>  
                                   <div class="col-md-8">
-                                  <input id="email" name="email" type="email" placeholder="mary@mymail.com" class="form-control input-md" required="">
+                                  <input id="email" name="email" type="email" placeholder="mary@mymail.com" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" class="form-control input-md" required="">
                                     
                                   </div>
                                 </div>
@@ -119,7 +119,7 @@
                                 <div class="form-group">
                                   <label class="col-md-4 control-label" for="latitude">Email Coordenação</label>  
                                   <div class="col-md-8">
-                                  <input id="coordemail" name="coordemail" type="email" placeholder="joao@coord.com.br" class="form-control input-md" required="">
+                                  <input id="coordemail" name="coordemail" type="email" placeholder="joao@coord.com.br"  pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" class="form-control input-md" required="">
                                     
                                   </div>
                                 </div>

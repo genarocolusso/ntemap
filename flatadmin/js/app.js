@@ -19,8 +19,7 @@
     });
   });
 
-  $(function() {
-    return $('select').select2();
+  $(function() { 
   });
 
   $(function() {
@@ -38,82 +37,97 @@
   });
 
 
- 
+
 
 }).call(this);
- $('#example').DataTable();
- 
- $("#botaopraenviarpromapa").click(function(){
+$('#example').DataTable();
+
+$(document).on("click", ".message-block",  function(){
+   
+  $("#contato").val($(".hiddeninfo", this).attr("contato"));
+  $("#endereco").val($(".hiddeninfo",this).attr("endereco"));
+  $("#email").val($(".hiddeninfo",this).attr("email"));
+  $("#coordenacao").val($(".hiddeninfo",this).attr("coordenacao"));
+  $("#coordemail").val($(".hiddeninfo",this).attr("coordemail"));
+  $("#selectbasic").val($(".hiddeninfo",this).attr("idpolo"));
+
+
+
+});
+
+
+
+$("#botaopraenviarpromapa").on("click", function(){
                         //alert("ola");
-                       
+
                         $.ajax({ 
 
-                                url: BASE_URL+'index.php/painel/cadastrar',
-                                type: 'POST',
-                                data: $("#addform").serializeArray(),                                
-                                success: function(msg){
-                                     
-                                     
-                                      $(".msgaviso").html(msg);
-                                      $(".msgaviso").addClass("active");
-                                      setTimeout(function(){ $(".msgaviso").removeClass("active");  
-
-                                       
-                                        $.ajax({
-                                          url:        'mostratabela',
-                                          type:       'POST',
-                                          cache:      false,
-                                          success: function(gg){        
-                                                     
-                                              $('.tabeladospolos').html(gg);
-                                                 $('#example').DataTable();
-                                          }           
-                                        });
-                                          }, 5000);
-                                         
-                                               jQuery.fn.reset = function(){
-                                                $(this).each(function(){ this.reset();});
-                                            }
-                                          
-                                         document.getElementById("addform").reset();
-                                    
-                                    }
-                            });
-                        return false;
-                    });
+                          url: BASE_URL+'index.php/painel/cadastrar',
+                          type: 'POST',
+                          data: $("#addform").serializeArray(),                                
+                          success: function(msg){
 
 
- $("#atualizarpolo").click(function(){
+                            $(".msgaviso").html(msg);
+                            $(".msgaviso").addClass("active");
+                            setTimeout(function(){ $(".msgaviso").removeClass("active");  
+
+
+                              $.ajax({
+                                url:        'mostratabela',
+                                type:       'POST',
+                                cache:      false,
+                                success: function(gg){        
+
+                                  $('.tabeladospolos').html(gg);
+                                  $('#example').DataTable();
+                                }           
+                              });
+                            }, 5000);
+
+                            jQuery.fn.reset = function(){
+                              $(this).each(function(){ this.reset();});
+                            }
+
+                            document.getElementById("addform").reset();
+
+                          }
+                        });
+return false;
+});
+
+
+$("#infoform").on("submit", function(){
                         //alert("ola"); 
                         $.ajax({ 
 
-                                url: BASE_URL+'painel/atualizarpolo',
-                                type: 'POST',
-                                data: $("#infoform").serializeArray(),                                
-                                success: function(msg){ 
-                                     
-                                      $(".msgaviso").html(msg);
-                                      $(".msgaviso").addClass("active");
-                                      setTimeout(function(){ $(".msgaviso").removeClass("active");  
-                                           $.ajax({
-                                          url:        BASE_URL+'painel/mostradadosatualizados',
-                                          type:       'POST',
-                                          cache:      false,
-                                          success: function(gg){        
-                                                     
-                                              $('.message-list').html(gg);
-                                                 
-                                          }           
-                                        });
-                                          }, 4000);
-                                         
-                                               jQuery.fn.reset = function(){
-                                                $(this).each(function(){ this.reset();});
-                                            }
-                                          
-                                         document.getElementById("infoform").reset();
-                                    
-                                    }
+                          url: BASE_URL+'painel/atualizarpolo',
+                          type: 'POST',
+                          data: $("#infoform").serializeArray(),                                
+                          success: function(msg){ 
+
+                            $(".msgaviso").html(msg);
+                            $(".msgaviso").addClass("active");
+                            setTimeout(function(){ $(".msgaviso").removeClass("active");  
+                             $.ajax({
+                              url:        BASE_URL+'painel/mostradadosatualizados',
+                              type:       'POST',
+                              cache:      false,
+                              success: function(gg){        
+
+                                $('.message-list').html(gg);
+
+                              }           
                             });
-                        return false;
-                    });
+                           }, 4000);
+
+                            jQuery.fn.reset = function(){
+                              $(this).each(function(){ this.reset();});
+                            }
+
+                            document.getElementById("infoform").reset();
+
+                          }
+                        });
+return false;
+});

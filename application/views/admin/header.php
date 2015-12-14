@@ -155,12 +155,12 @@
                         </div>
                         <ul class="nav navbar-nav">
                             <li class="active">
-                                <a href="index">
+                                <a href="<?php echo base_url(); ?>painel">
                                     <span class="icon fa fa-tachometer"></span><span class="title">Dashboard</span>
                                 </a>
                             </li>
                             <li class="panel panel-default dropdown">
-                                <a   href="poloinfos">
+                                <a   href="<?php echo base_url(); ?>painel/poloinfos">
                                     <span class="icon fa fa-desktop"></span><span class="title">Polos</span>
                                 </a>
                                 <!-- Dropdown level 1 -->
