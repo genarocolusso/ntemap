@@ -1,0 +1,15 @@
+ 
+
+<IfModule mod_rewrite.c>
+RewriteEngine on
+RewriteBase /ntemap
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond $1 !^(index\.php|res|robots\.txt)
+RewriteRule ^(.*)$ index.php/$1
+</IfModule>
+
+<IfModule !mod_rewrite.c>
+#TODO Error reporting when rewrite is not available.
+</IfModule>
