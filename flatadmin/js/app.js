@@ -55,6 +55,13 @@ $(document).on("click", ".message-block",  function(){
 
 });
 
+$(document).on("click",'.deletepolo', function(){
+
+   $("#idpolo").val($(this).attr('poloid'));
+
+   $("#ativo").val($(this).attr('ativo'));
+    $("#atualizastatus").submit();
+});
 
 
 $("#botaopraenviarpromapa").on("click", function(){
@@ -99,7 +106,7 @@ return false;
 
 $("#infoform").on("submit", function(){
                         //alert("ola"); 
-                        $.ajax({ 
+                        $.ajax({
 
                           url: BASE_URL+'painel/atualizarpolo',
                           type: 'POST',

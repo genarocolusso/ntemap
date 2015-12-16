@@ -1,7 +1,7 @@
                                 <?php foreach ($polos as $key) { ?>
                                 <a href="#">
                                     <li>
-                                        <img src=" " class="profile-img pull-left">
+                                        <img src="<?php base_url()?>../img/<?= $key['idpolo'] ?>" class="profile-img pull-left">
                                         <div class="message-block updateddata">
                                             <div><span class="username"><?= $key['name'] ?></span> <span class="message-datetime">100 Alunos</span>
                                             </div>

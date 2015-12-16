@@ -3,12 +3,13 @@ define('IS_AJAX', isset($_SERVER['HTTP_X_REQUESTED_WITH']) && strtolower($_SERVE
 
 class Painel extends CI_Controller {
 	public function __construct()
-       {
-            parent::__construct();
-            $this->load->helper('url');$this->load->model('registro_model');
-            $this->load->model('registro_model');
+	{
+		parent::__construct();
+		$this->load->helper('url');$this->load->model('registro_model');
+
+		$this->load->model('curso_model');
             // Your own constructor code
-       }
+	}
 	/**
 	 * Index Page for this controller.
 	 *
@@ -26,53 +27,61 @@ class Painel extends CI_Controller {
 	 */
 	public function index()
 	{ 
-	   
-	
-	$data['polos'] = $this->registro_model->polos();
-	
-	 
+
+
+		$data['polos'] = $this->registro_model->polos();
+		$data['cursos'] = $this->curso_model->ncursos();
+
 		$this->load->view('painel', $data);
 	}
 	public function poloinfos(){
-
+		$data['cursos'] = $this->curso_model->ncursos(); 
 
 		$data['polos'] = $this->registro_model->somapolos();
-	
-	 
+
+
 		$this->load->view('painelpolos', $data);
 
 
 	}
+	public function atualizastatus(){
+		$data['cursos'] = $this->registro_model->atualizarativo(); 
+		redirect('painel');
+	  
+	}
 
 
 	public function cadastrar(){
-        
-        $this->registro_model->cadastrar();
-        
-    }
-    	public function atualizarpolo(){
-        
-        $this->registro_model->atualizar();
-        
-    }
 
-    public function mostratabela(){
-    	 
-        
-	     $data['polos'] = $this->registro_model->polos();  
+		$this->registro_model->cadastrar();
+
+	}
+	public function atualizarpolo(){
+
+		$this->registro_model->atualizar();
+
+	}
+
+	public function mostratabela(){
+
+
+		$data['polos'] = $this->registro_model->polos();  
 	     echo $this->load->view('admin/tabelapolos', $data, true); // returns view as data
 	     
-	    
 
-    }
-     public function mostradadosatualizados(){
-    	 
-        
-	     $data['polos'] = $this->registro_model->somapolos();  
+
+	 }
+	 public function mostradadosatualizados(){
+
+
+	 	$data['polos'] = $this->registro_model->somapolos(); 
+
+	 	$data['cursos'] = $this->curso_model->ncursos(); 
+
 	     echo $this->load->view('admin/editpolostable', $data, true); // returns view as data
-	      
-
-    }
 
 
-}
+	 }
+
+
+	}
