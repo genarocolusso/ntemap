@@ -70,15 +70,15 @@
       <div class="row  no-margin-bottom">
         <div class="col-sm-6 col-xs-12">
           <div class="row">
-            
+
             <?php
-            
+
                                     $attr = 'id="infoform"'; //The form will have the id 'my_form'
                                     echo form_open_multipart('',$attr);
                                     ?>
 
                                     <fieldset>
-                                     
+
                                       <h1 class="text-center"> Adicionar Informação do Polo </h1>
                                       <!-- Text input-->
 
@@ -89,8 +89,8 @@
                                            <?php foreach ($polos as $key) { ?>
                                            <option value="<?= $key['idpolo']?>"><?= $key['name']?></option>
                                            <?php } ?>
-                                           
-                                           
+
+
                                          </select>
                                        </div>
                                      </div>
@@ -99,39 +99,39 @@
                                       <label class="col-md-4 control-label" for="latitude">Contato</label>  
                                       <div class="col-md-8">
                                         <input id="contato" name="contato" type="text" placeholder="(55) 2222-2222, (55) 3333-3333" class="form-control input-md" required="">
-                                        
+
                                       </div>
                                     </div>
                                     <div class="form-group">
                                       <label class="col-md-4 control-label" for="latitude">Endereço</label>  
                                       <div class="col-md-8">
                                         <input id="endereco" name="endereco" type="text" placeholder="Rua John Doe 222" class="form-control input-md" required="">
-                                        
+
                                       </div>
                                     </div>
                                     <div class="form-group">
                                       <label class="col-md-4 control-label" for="latitude">Email</label>  
                                       <div class="col-md-8">
                                         <input id="email" name="email" type="email" placeholder="mary@mymail.com" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" class="form-control input-md" required="">
-                                        
+
                                       </div>
                                     </div>
                                     <div class="form-group">
                                       <label class="col-md-4 control-label" for="latitude">Coordenação</label>  
                                       <div class="col-md-8">
                                         <input id="coordenacao" name="coordenacao" type="text" placeholder="Coordenador João Doe" class="form-control input-md" required="">
-                                        
+
                                       </div>
                                     </div>
                                     <div class="form-group">
                                       <label class="col-md-4 control-label" for="latitude">Email Coordenação</label>  
                                       <div class="col-md-8">
                                         <input id="coordemail" name="coordemail" type="email" placeholder="joao@coord.com.br"  pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" class="form-control input-md" required="">
-                                        
+
                                       </div>
                                     </div>
 
-                                    
+
 
                                     <!-- Button -->
                                     <div class="form-group">
@@ -145,14 +145,14 @@
                                   <?php  
                                   echo form_close();
                                   ?>
-                                  
+
                                   <hr>
-                                  
+
 
                                 </div>
                                 <div class="row">
-                                 
-                                 
+
+
                                   <div class="col-md-6 col-sm-12">
                                     <div class="thumbnail no-margin-bottom">
                                       <img src="" class="img-responsive">
@@ -161,7 +161,7 @@
                                         <p>Você pode editar informações do Polo como: Endereço, Telefone de contato, email, nome de coordenação e entre oturos ao clicar no nome do polo  exibido na tabela.</p>
                                         <p><a href="#" class="btn btn-success" role="button">Ok</a> </p>
                                       </div>
-                                      
+
                                     </div>
                                   </div>
                                 </div>
@@ -172,7 +172,7 @@
 
                                     <h1> Lista de Polos Cadastrados </h1>
                                     <div class="tabeladospolos">
-                                     
+
                                     </div>
                                   </div>
                                 </div>
@@ -186,22 +186,12 @@
                                   <div class="card-body no-padding">
                                     <ul class="message-list">
                                       <?php $this->load->view('admin/editpolostable'); ?>
-                                      
-                                      
-                                      <a href="#">
-                                        <li>
-                                          <img src="" class="profile-img pull-left">
-                                          <div class="message-block">
-                                            <div><span class="username">Polo de Cruz Alta, RS - Brazil</span> <span class="message-datetime">50 Alunos</span>
-                                            </div>
-                                            <div class="message">Endereço: Rua Cacilda do centro, 500 apto 600, 97044-344.</div>
-                                            <div class="message">Email: MariadaSilva@maildo.com</div>
-                                          </div>
-                                        </li>
-                                      </a>
+
+
+
                                       <a href="#" id="message-load-more">
                                         <li class="text-center load-more">
-                                          <i class="fa fa-refresh"></i> load more..
+                                          <i class="fa fa-refresh"></i> Carregar mais..
                                         </li>
                                       </a>
                                     </ul>
