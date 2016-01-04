@@ -44,16 +44,33 @@ class Painel extends CI_Controller {
 
 
 	}
+
+	public function polocursos(){
+		$data['cursos'] = $this->curso_model->ncursos(); 
+
+		$data['polos'] = $this->registro_model->somapolos();
+
+
+		$this->load->view('painelcursos', $data);
+
+
+	}
+
 	public function atualizastatus(){
 		$data['cursos'] = $this->registro_model->atualizarativo(); 
 		redirect('painel');
-	  
+
 	}
 
 
 	public function cadastrar(){
 
 		$this->registro_model->cadastrar();
+
+	}
+	public function cadastrarcurso(){
+
+		$this->curso_model->cadastrar();
 
 	}
 	public function atualizarpolo(){

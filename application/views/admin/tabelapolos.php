@@ -22,16 +22,14 @@
 
           }else{ echo "Inativo";} ?> </div>
           <div class="deletepolo btn btn-danger   " style="width:48%" poloid="<?= $key['id']?>" ativo="0" title="desativar">
-            <i class="fa fa-trash"></i>
+            <i class="fa fa-ban"></i>
           </div> 
           <div class="deletepolo btn btn-success   " style="width:48%" poloid="<?= $key['id']?>" ativo="1" title="ativar">
             <i class="fa fa-check"></i>
           </div> </td>
 
-        </tr>
-
-
-
+        </tr> 
+ 
         <?php  }
 
         ?>

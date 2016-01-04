@@ -37,12 +37,7 @@ class Registro_model extends CI_Model {
           ));
        }
      }
-
-
-
-
-
-
+     
 
      echo "<p>".$this->input->post('nome', TRUE)."</p> ".
      "Cadastrado com sucesso!!";
@@ -53,8 +48,6 @@ class Registro_model extends CI_Model {
  }else{
   echo "<p> Este Polo já está cadastrado!</p> ";
 }
-
-
 
 
 

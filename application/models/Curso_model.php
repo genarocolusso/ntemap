@@ -5,34 +5,48 @@ class Curso_model extends CI_Model {
 
     $this->db->select("*");
     $this->db->from('curso');
-    $this->db->where("nome",$this->input->post('nome', TRUE));// e idpolo tal
+    
+    $this->db->where("idpolo",$this->input->post('polo', TRUE));
     $query = $this->db->get();
     if ($query->num_rows() == 0)
     {
 
-     if(empty($this->input->post('nome'))  ){
+     if(empty($this->input->post('nomecurso'))  ){
 
 
      }else{
       $this->db->insert('curso', array(
 
-        'nome' =>  ($this->input->post('nome', TRUE)),
+        'nome' =>  ($this->input->post('nomecurso', TRUE)),
         'numalunos' => htmlentities($this->input->post('numalunos', TRUE)),
-        'idpolo' =>  htmlentities($this->input->post('idpolo', TRUE)),
+        'idpolo' =>  htmlentities($this->input->post('polo', TRUE)),
         'ativo' =>   $this->input->post('ativo', TRUE) 
 
-        )); 
-      
+        ));  
  
 
-     echo "<p>".$this->input->post('nome', TRUE)."</p> ".
-     "Cadastrado com sucesso!!";
+     echo "<p>".$this->input->post('nomecurso', TRUE)."</p> ".
+     "Cadastrado com sucesso!";
 
    }
         // Inserção dos dados
 
  }else{
-  echo "<p> Este CURSO já está cadastrado!</p> ";
+
+  foreach ($query->result() as $row)
+{
+    $data = array(
+   
+        'nome' =>  ($this->input->post('nomecurso', TRUE)),
+        'numalunos' => htmlentities($this->input->post('numalunos', TRUE)),
+        'idpolo' =>  htmlentities($this->input->post('polo', TRUE)),
+        'ativo' =>   $this->input->post('ativo', TRUE) 
+   );
+  $this->db->where('id', $row->id);
+  $this->db->update('curso', $data);
+  Echo "Update realizado com sucesso";
+}
+  
 }
 
  

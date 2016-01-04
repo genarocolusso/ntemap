@@ -52,6 +52,10 @@ $(document).on("click", ".message-block",  function(){
   $("#selectbasic").val($(".hiddeninfo",this).attr("idpolo"));
 
 
+  $("#idpolo").val($(".hiddeninfo", this).attr("idpolo"));
+  $("#nomecurso").val($(".hiddeninfo",this).attr("nome"));
+  $("#numalunos").val($(".hiddeninfo",this).attr("numalunos"));
+
 
 });
 
@@ -133,6 +137,41 @@ $("#infoform").on("submit", function(){
                             }
 
                             document.getElementById("infoform").reset();
+
+                          }
+                        });
+return false;
+});
+
+$("#addcurso").on("submit", function(){
+                        //alert("ola"); 
+                        $.ajax({
+
+                          url: BASE_URL+'painel/cadastrarcurso',
+                          type: 'POST',
+                          data: $("#addcurso").serializeArray(),                                
+                          success: function(msg){ 
+
+                            $(".msgaviso").html(msg);
+                            $(".msgaviso").addClass("active");
+                            setTimeout(function(){ $(".msgaviso").removeClass("active");  
+                            /* $.ajax({
+                              url:        BASE_URL+'painel/mostradadosatualizados',
+                              type:       'POST',
+                              cache:      false,
+                              success: function(gg){        
+
+                                $('.message-list').html(gg);
+
+                              }           
+                            }); */
+                           }, 4000);
+
+                            jQuery.fn.reset = function(){
+                              $(this).each(function(){ this.reset();});
+                            }
+
+                            document.getElementById("addcurso").reset();
 
                           }
                         });

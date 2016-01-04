@@ -15,8 +15,6 @@
     var map;
     var marker;
  
-     
- 
        
   
      

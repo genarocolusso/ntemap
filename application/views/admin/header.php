@@ -167,7 +167,7 @@
                                 
                             </li>
                             <li class="panel panel-default dropdown">
-                                <a data-toggle="collapse" href="#dropdown-table">
+                                <a  href="<?php echo base_url(); ?>painel/polocursos">
                                     <span class="icon fa fa-table"></span><span class="title">Cursos</span>
                                 </a>
                                 <!-- Dropdown level 1 -->

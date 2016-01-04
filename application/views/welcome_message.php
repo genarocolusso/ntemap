@@ -6,25 +6,21 @@
       <div class="row centralmenu">
 
   <div class="col-md-12">
-      <div class="socialicon">
-      <i class="fa fa-file  "></i> Todos os Polos
+      <div class="socialicon ligatodos">
+      <i class="fa fa-check-circle-o azul "></i> Todos os Polos
       </div>
   </div> 
   <div class="col-md-12">
-      <div class="socialicon">
-      <i class="fa fa-cab   "></i> Polos Ativos
+      <div class="socialicon ligaativos">
+      <i class="fa fa-check  verde  "></i> Polos Ativos
       </div>
   </div> 
   <div class="col-md-12">
-      <div class="socialicon">
-      <i class="fa fa-fighter-jet "></i> Polos Inativos
+      <div class="socialicon ligainativos">
+      <i class="fa fa-ban vermelho"></i> Polos Inativos
       </div>
   </div> 
-  <div class="col-md-12">
-      <div class="socialicon">
-      <i class="fa fa-cc-visa  "></i> 
-      </div>
-  </div> 
+   
 
 
       </div>
@@ -37,7 +33,7 @@
     <div class="pull-left">
    <img src="img/NTE.jpg" class="img-responsive" style="max-width: 200px;opacity: 0.7;">
     </div>
-    <div class="pull-right"> 
+    <div class="pull-right" style="height: 60px"> 
    <a id="nav-toggle" href="#"><span></span></a>
   <span class='menutx'>menu</span>
     </div>
@@ -50,7 +46,7 @@
 
  </div>
 
-<div id="formsearch">
+<div id="formsearch" style="display: none">
   
   <input id="searchTextField" name="textinput" type="search" placeholder="Buscar polo" class="home__search">
       
@@ -60,16 +56,18 @@
 </div>
    
        
-  
-<?php $this->load->view("includes/scriptos") ?>
+   
       
   
 <?php $this->load->view("includes/scriptos") ?>
  <?php
-$ar = $polos;
+$todos = $polos;
+
 ?>
 <script type="text/javascript">
-var locations = <?php echo json_encode($ar) ?>;
+var locationsAll = <?php echo json_encode($todos) ?>;
+var locationsAtivas =  <?php echo json_encode($ativos) ?>;
+var locationsInativas =  <?php echo json_encode($inativos) ?>;
 // ["apple","orange",1,false,null,true,8];
 // access 4th element in array
  

@@ -61,7 +61,7 @@ margin: 0; padding: 0;
 }
 .overall{ 
       position: absolute;
-    min-height: 400px;
+    min-height: 230px;
     width: 250px;
     z-index: -3;
     top: 62px;
@@ -223,7 +223,12 @@ span.menutx{
 }
 
 .socialicon:hover {
-    transform: scale(1.2); 
+    transform: scale(1.2);  cursor: pointer;
 }
 .fa{transform: scale(1.5);
     margin-right: 15px;}
+
+
+    .azul{color: #0299F1;}
+    .verde{color: #43C123;}
+    .vermelho{ color: #F10202;}
