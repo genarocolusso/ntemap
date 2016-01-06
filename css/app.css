@@ -231,7 +231,7 @@ span.menutx{
     .vermelho{ color: #F10202;}
 
     #poloheader{
-     padding: 60px 0px;
+     padding: 90px 0px;
      background-size: cover;
      background-repeat: no-repeat;
      background-position: center;
@@ -241,7 +241,7 @@ position: relative;
     }
     #numeros{
    background: #035E67;
-   
+
     }
     #poloscontatos{
       background: #fff;
@@ -252,8 +252,8 @@ position: relative;
     .pad30{ padding: 30px 0px;}
     .grey{ color: #737373;}
     .mar10{ margin: 10px 0px;}
-
-    @media screen and (max-width: 580px){
+    .infotext{ color: #9E9E9E;}
+    @media screen and (max-width: 994px){
 
         .mar10{ margin: 30px 0px; text-align: center;}
 

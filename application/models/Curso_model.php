@@ -7,6 +7,7 @@ class Curso_model extends CI_Model {
     $this->db->from('curso');
     
     $this->db->where("idpolo",$this->input->post('polo', TRUE));
+    $this->db->where("nome",$this->input->post('nomecurso', TRUE));
     $query = $this->db->get();
     if ($query->num_rows() == 0)
     {

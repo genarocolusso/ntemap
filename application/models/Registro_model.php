@@ -75,6 +75,7 @@ public function polos(){
 
   return $data['polos'];
 }
+
 public function polosid($id){
   $data['polos'] = [];
   
@@ -89,6 +90,7 @@ public function polosid($id){
 
   return $data['polos'];
 }
+
 public function atualizar(){
   
   $data = array(
@@ -124,6 +126,17 @@ public function somapolos(){
   }
 
   return $data['polos'];
+}
+
+public function infodopolo($id){
+  $query =  $this->db->query("SELECT * FROM    `poloinfo`   WHERE  idpolo = $id");        
+  
+  if ($query->num_rows() > 0)
+  {
+    $data['polocontato'] = $query->result_array();
+  }
+
+  return $data['polocontato'];
 }
 
 }

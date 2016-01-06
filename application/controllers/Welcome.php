@@ -49,7 +49,7 @@ $data['inativos'] = [];
 		  	
 		
 		$data['polos'] = $this->registro_model->polosid( $this->uri->segment(2,0));
-		$data['cursos'] = $this->curso_model->ncursos();
+		$data['infocontato'] = $this->registro_model->infodopolo($this->uri->segment(2,0));
 
 		$this->db->select("*");
 		$this->db->from('curso');

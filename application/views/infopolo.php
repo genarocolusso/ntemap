@@ -25,17 +25,17 @@ foreach ($polos as $key => $value) { ?>
     <div class="numberpolos ">
       <div class="row">
 
-        <div class="col-md-3" style="margin: 65px 5px;">
-          <span style="font-size:6em;">
+        <div class="col-sm-6" style="margin: 65px 0px;">
+          <div style="font-size:6em;">
             <?php 
             $nalunos = 0 ;
             foreach ($infopolo as $key => $value) {
               $nalunos += $value['numalunos'];
             } ?>
 
-            <?= $nalunos ?></span><br> Alunos
+            <span class="cresce"><?= $nalunos ?></span></div><br> Alunos
           </div>
-          <div class="col-md-3" style="margin: 65px 5px;">
+          <div class="col-sm-6" style="margin: 65px 0px;">
             <span style="font-size:6em;"><?= sizeof($infopolo)?></span><br>  Cursos
           </div>
 
@@ -53,31 +53,47 @@ foreach ($polos as $key => $value) { ?>
     </section>
     <section id="poloscontatos" class="pad30">
     <div class="container">
+     <?php foreach ($infocontato as $key => $value) {
+      
+        ?>
          <h1 class="text-center"> Informações para contato </h1><br>
          <div class="row grey">
           <div class="col-md-4 mar10">
           <h3><i class="fa fa-comments-o"></i> Contato</h3>
-          55 3222-2323 <br>
-          contato@ead.ufsm.br
+          <div class="infotext">
+          <?=$value['contato']?> <br>
+           <?=$value['email']?>
+          </div>
           </div>
           <div class="col-md-4 mar10">
            <h3><i class="fa fa-university"></i> Coordenação</h3>
-          Coordenador: José Maria <br>
-          josem@ead.ufsm.br
+           <div class="infotext">
+          Coordenador:  <?=$value['coordenacao']?> <br>
+           <?=$value['coordemail']?>
+          </div>
           </div>
           <div class="col-md-4 mar10">
           <h3><i class="fa fa-location-arrow"></i> Endereço</h3>
-           Rua José maria muito louca, 608, prédio rosa
+          <div class="infotext">
+            <?=$value['endereco']?>
+           </div>
           </div>
            
     </div>
+       <?php } ?>
     </div>
 
   </section>
 
 
   <script type="text/javascript">
-
+jQuery({ Counter: 0 }).animate({ Counter: $('.cresce').text() }, {
+  duration: 1000,
+  easing: 'swing',
+  step: function () {
+    $('.Single').text(Math.ceil(this.Counter));
+  }
+});
 
   </script>
 
