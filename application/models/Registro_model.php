@@ -75,7 +75,20 @@ public function polos(){
 
   return $data['polos'];
 }
+public function polosid($id){
+  $data['polos'] = [];
+  
+  $this->db->select("*");
+  $this->db->from('polos');
+  $this->db->where("id", $id);
+  $query = $this->db->get();
+  if ($query->num_rows() > 0)
+  {
+    $data['polos'] = $query->result_array();
+  }
 
+  return $data['polos'];
+}
 public function atualizar(){
   
   $data = array(
