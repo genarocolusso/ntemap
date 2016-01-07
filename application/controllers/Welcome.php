@@ -50,17 +50,8 @@ $data['inativos'] = [];
 		
 		$data['polos'] = $this->registro_model->polosid( $this->uri->segment(2,0));
 		$data['infocontato'] = $this->registro_model->infodopolo($this->uri->segment(2,0));
-
-		$this->db->select("*");
-		$this->db->from('curso');
-		$this->db->where('idpolo', $this->uri->segment(2,0));
-		$query2 = $this->db->get();
-		if ($query2->num_rows() > 0)
-		{
-		    $data['infopolo'] = $query2->result_array();
-		}
-
-
+		$data['infopolo'] = $this->curso_model->cursosporpolo( $this->uri->segment(2,0));
+		 
 
 		 		$this->load->view('infopolo',$data);
 		 }

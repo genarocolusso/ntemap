@@ -63,11 +63,24 @@ class Curso_model extends CI_Model {
         if ($query->num_rows() > 0)
         {
             $data['cursos'] = $query->result_array();
+        } 
+        return $data['cursos'];
+    }
+
+ public function cursosporpolo($id){
+        $data['cursos'] = [];
+    
+        $this->db->select("*");
+        $this->db->from('curso');
+        $this->db->where('idpolo',$id);
+        $query = $this->db->get();
+        if ($query->num_rows() > 0)
+        {
+            $data['cursos'] = $query->result_array();
         }
 
         return $data['cursos'];
     }
-
 
 public function deletar(){
 
