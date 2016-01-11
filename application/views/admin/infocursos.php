@@ -167,7 +167,7 @@
                                   </div>
                                   <div class="card-body no-padding">
                                     <ul class="message-list">
-                                      <?php $this->load->view('admin/editcursotable'); ?>
+                                      <?php $this->load->view('admin/tabelacursos'); ?>
 
 
 
