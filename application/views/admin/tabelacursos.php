@@ -24,8 +24,20 @@
 
         <?= $key['nome']?></td>
         <td><?= $key['numalunos']?></td> 
-        <td><?= $key['nivelgrad']?></td>
-        <td><?= $key['ativo']?></td>
+        <td>
+
+        <?php if($key['nivelgrad']==1)
+                echo 'Graduação';
+                else
+                echo 'Pós-graduação'; ?>
+
+
+        </td>
+        <td><?php
+            if($key['ativo']==1)
+                echo 'Ativo';
+                else
+                echo 'Inativo';?></td>
          
         </tr> 
  
