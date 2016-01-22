@@ -120,24 +120,25 @@
                                 </li>
                             </ul>
                         </li> -->
+                        <?php if($logado){ ?>
                         <li class="dropdown profile">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Emily Hart <span class="caret"></span></a>
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Admin Menu <span class="caret"></span></a>
                             <ul class="dropdown-menu animated fadeInDown">
                                 <li class="profile-img">
                                     <img src="<?php echo base_url(); ?>flatadmin/img/profile/picjumbo.com_HNCK4153_resize.jpg" class="profile-img">
                                 </li>
                                 <li>
                                     <div class="profile-info">
-                                        <h4 class="username">Emily Hart</h4>
-                                        <p>emily_hart@email.com</p>
-                                        <div class="btn-group margin-bottom-2x" role="group">
-                                            <button type="button" class="btn btn-default"><i class="fa fa-user"></i> Profile</button>
-                                            <button type="button" class="btn btn-default"><i class="fa fa-sign-out"></i> Logout</button>
+                                        <h4 class="username">Admin</h4>
+                                         
+                                        <div class="btn-group margin-bottom-2x" role="group"> 
+                                            <a href="<?php echo base_url();?>Login/logout"><button type="button" class="btn btn-default"><i class="fa fa-sign-out"></i> Logout</button></a>
                                         </div>
                                     </div>
                                 </li>
                             </ul>
                         </li>
+                         <?php } ?>
                     </ul>
                 </div>
             </nav>
@@ -156,7 +157,7 @@
                         <ul class="nav navbar-nav">
                             <li class="active">
                                 <a href="<?php echo base_url(); ?>painel">
-                                    <span class="icon fa fa-tachometer"></span><span class="title">Dashboard</span>
+                                    <span class="icon fa fa-tachometer"></span><span class="title">Novos Polos</span>
                                 </a>
                             </li>
                             <li class="panel panel-default dropdown">

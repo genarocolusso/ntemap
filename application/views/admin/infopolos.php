@@ -70,18 +70,53 @@
 
 
                                     <!-- Button -->
-                                    <div class="form-group">
+                                  
+                                     
+
+                                       <div class="form-group">
                                       <label class="col-md-4 control-label" for="singlebutton"> </label>
                                       <div class="col-md-8">
                                         <button id="atualizarpolo" name="singlebutton" class="btn btn-primary">Atualizar Informação</button>
                                       </div>
                                     </div>
-
                                   </fieldset>
                                   <?php  
                                   echo form_close();
                                   ?>
+                                  <hr>
+                                   <fieldset>
+                                   <h2 class="text-center"> Adicionar Arquivo junto ao polo</h2>
+                                      <?php echo form_open_multipart('upload/do_upload');?>
 
+                                        <div class="form-group">
+                                        <label class="col-md-4 control-label" for="selectbasic">Polo</label>
+                                        <div class="col-md-8">
+                                          <select id="id_polo_click" name="id_polo_click" class="form-control">
+                                           <?php foreach ($polos as $key) { ?>
+                                           <option value="<?= $key['idpolo']?>"><?= $key['name']?></option>
+                                           <?php } ?>
+
+
+                                         </select>
+                                       </div>
+                                     </div>
+                                          <div class="form-group">
+                                        <label class="col-md-4 control-label" for="singlebutton"> Adicionar Arquivo </label>
+                                      <div class="col-md-8">
+                                    <input type="file" name="userfile" size="20" />
+
+                                    <br>
+
+                                    <input type="submit" value="upload" />
+                                    </div>
+                                     </div>
+                                   </fieldset>
+                                       <?php  
+                                  echo form_close();
+                                  ?>
+                                  <br>  <br> 
+
+                              <br>  
                                   <hr>
 
 

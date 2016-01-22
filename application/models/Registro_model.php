@@ -30,7 +30,7 @@ class Registro_model extends CI_Model {
       {
         foreach ($query->result() as $row)
         {
-         $this->db->insert('poloinfo', array(
+         $this->db->insert('polo_info', array(
            
           'idpolo' =>  ($row->id) 
           
@@ -102,7 +102,7 @@ public function atualizar(){
    'endereco' => $this->input->post('endereco', TRUE) 
    );
   $this->db->where('idpolo', $this->input->post('polo'));
-  $this->db->update('poloinfo', $data);
+  $this->db->update('polo_info', $data);
   Echo "Polo Atualizado!";
 }
 
@@ -118,7 +118,7 @@ public function atualizarativo(){
 }
 
 public function somapolos(){
-  $query =  $this->db->query("SELECT * FROM  `polos` , `poloinfo`   WHERE  polos.id = poloinfo.idpolo");        
+  $query =  $this->db->query("SELECT * FROM  `polos` , `polo_info`   WHERE  polos.id = polo_info.idpolo");        
   
   if ($query->num_rows() > 0)
   {
@@ -129,7 +129,7 @@ public function somapolos(){
 }
 
 public function infodopolo($id){
-  $query =  $this->db->query("SELECT * FROM    `poloinfo`   WHERE  idpolo = $id");        
+  $query =  $this->db->query("SELECT * FROM    `polo_info`   WHERE  idpolo = $id");        
   
   if ($query->num_rows() > 0)
   {

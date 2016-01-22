@@ -18,7 +18,7 @@
                                             <div><span class="username"><?= $key['nome'] ?></span> 
                                             </div> 
                                              <div class="message">Número de Alunos: <?= $key['numalunos'] ?> </div>
-                                            <div class="hiddeninfo" idpolo='<?= $key['idpolo'] ?>' idcurso='<?= $key['id'] ?>' nome='<?= $key['nome'] ?>'  numalunos='<?= $key['numalunos'] ?>' ativo='<?= $key['ativo'] ?>'> </div>
+                                            <div class="hiddeninfo" idpolo='<?= $key['idpolo'] ?>' idcurso='<?= $key['id'] ?>' nome='<?= $key['nome'] ?>'  numalunos='<?= $key['numalunos'] ?>' ativo='<?= $key['ativo'] ?>' graduacao='<?= $key['nivelgrad'] ?>'> </div>
 
                                            </div>
 

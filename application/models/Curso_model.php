@@ -7,7 +7,7 @@ class Curso_model extends CI_Model {
     $this->db->from('curso');
     
     $this->db->where("idpolo",$this->input->post('polo', TRUE));
-    $this->db->where("nome",$this->input->post('nomecurso', TRUE));
+    $this->db->where("id",$this->input->post('hiddenidcurso', TRUE));
     $query = $this->db->get();
     if ($query->num_rows() == 0)
     {
@@ -21,6 +21,7 @@ class Curso_model extends CI_Model {
         'nome' =>  ($this->input->post('nomecurso', TRUE)),
         'numalunos' => htmlentities($this->input->post('numalunos', TRUE)),
         'idpolo' =>  htmlentities($this->input->post('polo', TRUE)),
+        'nivelgrad' =>  htmlentities($this->input->post('graduacao', TRUE)),
         'ativo' =>   $this->input->post('ativo', TRUE) 
 
         ));  

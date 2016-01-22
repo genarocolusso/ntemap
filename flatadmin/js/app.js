@@ -50,11 +50,13 @@ $(document).on("click", ".message-block",  function(){
   $("#coordenacao").val($(".hiddeninfo",this).attr("coordenacao"));
   $("#coordemail").val($(".hiddeninfo",this).attr("coordemail"));
   $("#selectbasic").val($(".hiddeninfo",this).attr("idpolo"));
-
+  $("#id_polo_click").val($(".hiddeninfo",this).attr("idpolo"));
 
   $("#idpolo").val($(".hiddeninfo", this).attr("idpolo"));
   $("#nomecurso").val($(".hiddeninfo",this).attr("nome"));
   $("#numalunos").val($(".hiddeninfo",this).attr("numalunos"));
+  $("#graduacao").val($(".hiddeninfo",this).attr("graduacao"));
+  $("#hiddenidcurso").val($(".hiddeninfo",this).attr("idcurso"));
 
 
 });
@@ -109,6 +111,7 @@ return false;
 
 
 $("#infoform").on("submit", function(){
+  
                         //alert("ola"); 
                         $.ajax({
 

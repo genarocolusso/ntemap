@@ -48,10 +48,28 @@
 
                                       </div>
                                     </div>
+                                     <div class="form-group" style="display: none">
+                                       
+                                      <div class="col-md-8">
+                                        <input id="hiddenidcurso" name="hiddenidcurso" type="text" placeholder="40"  class="form-control input-md" >
+
+                                      </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-md-4 control-label" for="selectbasic">Nível</label>
+                                        <div class="col-md-8">
+                                          <select id="graduacao" name="graduacao" class="form-control">
+                                          
+                                           <option value="1">Graduação</option>
+                                           <option value="2">Pós-Graduação</option>
+
+                                         </select>
+                                       </div>
+                                     </div>
                                     <div class="form-group">
                                         <label class="col-md-4 control-label" for="selectbasic">Ativo</label>
                                         <div class="col-md-8">
-                                          <select id="selectbasic" name="ativo" class="form-control">
+                                          <select id="name" ativo="ativo" class="form-control">
                                           
                                            <option value="1">Sim</option>
                                            <option value="0">Não</option>
@@ -68,6 +86,7 @@
                                         <button id="atualizarpolo" name="singlebutton" class="btn btn-primary">Atualizar Informação</button>
                                       </div>
                                     </div>
+
 
                                   </fieldset>
                                   <?php  

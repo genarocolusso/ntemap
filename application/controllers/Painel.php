@@ -5,43 +5,43 @@ class Painel extends CI_Controller {
 	public function __construct()
 	{
 		parent::__construct();
-		$this->load->helper('url');$this->load->model('registro_model');
-
+		$this->load->helper('url');$this->load->model('registro_model'); 
 		$this->load->model('curso_model');
+		 $this->load->model('Validlogin', 'membership'); 
+		 $this->membership->logged();
+
+ 
+
+
             // Your own constructor code
 	}
-	/**
-	 * Index Page for this controller.
-	 *
-	 * Maps to the following URL
-	 * 		http://example.com/index.php/welcome
-	 *	- or -
-	 * 		http://example.com/index.php/welcome/index
-	 *	- or -
-	 * Since this controller is set as the default controller in
-	 * config/routes.php, it's displayed at http://example.com/
-	 *
-	 * So any other public methods not prefixed with an underscore will
-	 * map to /index.php/welcome/<method_name>
-	 * @see http://codeigniter.com/user_guide/general/urls.html
-	 */
+	 
 	public function index()
 	{ 
 
 
 		$data['polos'] = $this->registro_model->polos();
 		$data['cursos'] = $this->curso_model->ncursos();
-
+		$data['logado'] = $this->session->userdata('logged');
 		$this->load->view('painel', $data);
+		// carrega polos e cursos pra mostrar na view.
 	}
 	public function poloinfos(){
 		$data['cursos'] = $this->curso_model->ncursos(); 
 
 		$data['polos'] = $this->registro_model->somapolos();
-
+		$data['logado'] = $this->session->userdata('logged');
+		$this->db->select("*");
+		$this->db->from('polo_arquivo');
+		$query = $this->db->get();
+		 if ($query->num_rows() > 0)
+        {
+           $data['arquivos'] =  $query->result_array();
+        } 
+		 
 
 		$this->load->view('painelpolos', $data);
-
+		// carrega polos,cursos e arquivos pra mostrar na view.
 
 	}
 
@@ -49,9 +49,10 @@ class Painel extends CI_Controller {
 		$data['cursos'] = $this->curso_model->ncursos(); 
 
 		$data['polos'] = $this->registro_model->somapolos();
-
+		$data['logado'] = $this->session->userdata('logged');
 
 		$this->load->view('painelcursos', $data);
+		// carrega polos e cursos pra mostrar na view.
 
 
 	}
@@ -83,8 +84,7 @@ class Painel extends CI_Controller {
 
 
 		$data['polos'] = $this->registro_model->polos();  
-	     echo $this->load->view('admin/tabelapolos', $data, true); // returns view as data
-	     
+	     echo $this->load->view('admin/tabelapolos', $data, true); 
 
 
 	 }
@@ -95,8 +95,7 @@ class Painel extends CI_Controller {
 
 	 	$data['cursos'] = $this->curso_model->ncursos(); 
 
-	     echo $this->load->view('admin/editpolostable', $data, true); // returns view as data
-
+	     echo $this->load->view('admin/editpolostable', $data, true);  
 
 	 }
 
