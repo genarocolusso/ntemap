@@ -64,11 +64,18 @@ $(document).on("click", ".message-block",  function(){
 $(document).on("click",'.deletepolo', function(){
 
    $("#idpolo").val($(this).attr('poloid'));
-
    $("#ativo").val($(this).attr('ativo'));
     $("#atualizastatus").submit();
 });
+$(document).on('click', '.passadelete', function(){
+     $("#modalpradeleta").attr("poloid",($(this).attr('poloid')));
+});
+$(document).on("click",'.deletepoloforreal', function(){
 
+   $("#deletedid").val($(this).attr('poloid'));
+ 
+    $("#deletarpolo").submit();
+});
 
 $("#botaopraenviarpromapa").on("click", function(){
                         //alert("ola");

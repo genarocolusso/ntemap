@@ -22,7 +22,7 @@ class Validlogin extends CI_Model {
                     'logged' => true                 );                 
              $this->session->set_userdata($data);
              redirect('Painel/index');
- 
+  
 
         }else{
           redirect('Login/index');

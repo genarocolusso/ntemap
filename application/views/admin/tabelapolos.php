@@ -21,10 +21,13 @@
             echo "Ativo";
 
           }else{ echo "Inativo";} ?> </div>
-          <div class="deletepolo btn btn-danger   " style="width:48%" poloid="<?= $key['id']?>" ativo="0" title="desativar">
+          <div class="passadelete btn btn-danger   " style="width:30%" poloid="<?= $key['id']?>"  title="deletar" data-toggle="modal" data-target="#certezadelete">
+            <i class="fa fa-trash"></i>
+          </div>
+          <div class="deletepolo btn btn-info   " style="width:30%" poloid="<?= $key['id']?>" ativo="0" title="desativar">
             <i class="fa fa-ban"></i>
           </div> 
-          <div class="deletepolo btn btn-success   " style="width:48%" poloid="<?= $key['id']?>" ativo="1" title="ativar">
+          <div class="deletepolo btn btn-success   " style="width:30%" poloid="<?= $key['id']?>" ativo="1" title="ativar">
             <i class="fa fa-check"></i>
           </div> </td>
 
@@ -38,8 +41,7 @@
 
 
 
-    <?php
-
+    <?php 
                                     $attr = 'id="atualizastatus"'; //The form will have the id 'my_form'
                                     echo form_open_multipart('painel/atualizastatus',$attr);
                                     ?>
@@ -78,3 +80,49 @@
                                       echo form_close();
                                       ?>
 
+
+    <?php 
+                                    $attr = 'id="deletarpolo"'; //The form will have the id 'my_form'
+                                    echo form_open_multipart('painel/deletarpolo',$attr);
+                                    ?>
+
+                                    <fieldset style="display:none">
+ 
+                                      <div class="form-group">
+
+                                        <div class="col-md-8">
+                                          <input id="deletedid" name="deleted" type="text" placeholder="" class="form-control input-md" required="">
+
+                                        </div> </div>
+
+
+
+                                        <!-- Button -->
+                                        <div class="form-group">
+                                          <label class="col-md-4 control-label" for="singlebutton"> </label>
+                                          <div class="col-md-8">
+                                            <button id="deletepoloforreal" name="singlebutton" class="btn btn-primary">Atualizar Status</button>
+                                          </div>
+                                        </div>
+
+                                      </fieldset>
+                                      <?php 
+
+                                      echo form_close();
+                                      ?>
+
+<div class="modal fade" id="certezadelete" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Tem certeza que deseja deletar este polo?</h4>
+      </div>
+       
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Não</button>
+        <button type="button" id="modalpradeleta" class="deletepoloforreal btn btn-primary" poloid="">Sim</button>
+      </div>
+    </div>
+  </div>
+</div>

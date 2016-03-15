@@ -9,10 +9,7 @@ class Painel extends CI_Controller {
 		$this->load->model('curso_model');
 		 $this->load->model('Validlogin', 'membership'); 
 		 $this->membership->logged();
-
  
-
-
             // Your own constructor code
 	}
 	 
@@ -61,6 +58,10 @@ class Painel extends CI_Controller {
 		$data['cursos'] = $this->registro_model->atualizarativo(); 
 		redirect('painel');
 
+	}
+	public function deletarpolo(){
+		$data['cursos'] = $this->registro_model->deletar(); 
+		redirect('painel');
 	}
 
 

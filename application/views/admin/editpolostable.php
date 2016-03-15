@@ -19,10 +19,12 @@
                                             <b>
                                               <?php   
                                               $narquivos = 0;
+                                              if(isset($arquivos)){
                                                 foreach ($arquivos as $arquivo) {
                                                   if($arquivo['id_polo']==$key['idpolo'])
                                                     $narquivos += 1;
                                                 }
+                                              }
                                                 echo $narquivos;
                                               ?> Arquivos
                                             </b>

@@ -41,7 +41,7 @@ class Upload extends CI_Controller {
    					);
 			 $this->db->insert('polo_arquivo', $data1);
 			 redirect('/Painel/poloinfos');
-
+			 			// adiciona arquivo na tabela polo_arquivo mais de um arquivo pode ser linkado a um polo
 
 
 		}

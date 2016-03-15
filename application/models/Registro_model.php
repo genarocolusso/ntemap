@@ -119,7 +119,7 @@ public function atualizarativo(){
 
 public function somapolos(){
   $query =  $this->db->query("SELECT * FROM  `polos` , `polo_info`   WHERE  polos.id = polo_info.idpolo");        
-  
+  $data['polos'] = null;
   if ($query->num_rows() > 0)
   {
     $data['polos'] = $query->result_array();

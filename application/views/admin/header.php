@@ -88,48 +88,15 @@
                                 </li>
                             </ul>
                         </li>
-                        <!--  <li class="dropdown danger">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-star-half-o"></i> 4</a>
-                            <ul class="dropdown-menu danger  animated fadeInDown">
-                                <li class="title">
-                                    Notification <span class="badge pull-right">4</span>
-                                </li>
-                              <li>
-                                    <ul class="list-group notifications">
-                                        <a href="#">
-                                            <li class="list-group-item">
-                                                <span class="badge">1</span> <i class="fa fa-exclamation-circle icon"></i> new registration
-                                            </li>
-                                        </a>
-                                        <a href="#">
-                                            <li class="list-group-item">
-                                                <span class="badge success">1</span> <i class="fa fa-check icon"></i> new orders
-                                            </li>
-                                        </a>
-                                        <a href="#">
-                                            <li class="list-group-item">
-                                                <span class="badge danger">2</span> <i class="fa fa-comments icon"></i> customers messages
-                                            </li>
-                                        </a>
-                                        <a href="#">
-                                            <li class="list-group-item message">
-                                                view all
-                                            </li>
-                                        </a>
-                                    </ul>
-                                </li>
-                            </ul>
-                        </li> -->
+                         
                         <?php if($logado){ ?>
                         <li class="dropdown profile">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Admin Menu <span class="caret"></span></a>
                             <ul class="dropdown-menu animated fadeInDown">
-                                <li class="profile-img">
-                                    <img src="<?php echo base_url(); ?>flatadmin/img/profile/picjumbo.com_HNCK4153_resize.jpg" class="profile-img">
-                                </li>
+                                 
                                 <li>
                                     <div class="profile-info">
-                                        <h4 class="username">Admin</h4>
+                                        <h4 class="username">Clique para sair</h4>
                                          
                                         <div class="btn-group margin-bottom-2x" role="group"> 
                                             <a href="<?php echo base_url();?>Login/logout"><button type="button" class="btn btn-default"><i class="fa fa-sign-out"></i> Logout</button></a>
