@@ -29,19 +29,22 @@
             box-shadow: 0px 0px 9px rgba(0,0,0,0.6);    }
             .msgaviso{
        
-    position: fixed;
-    height: 100%;
+   position: absolute;
+    height: 40px;
     width: 100%;
     padding: 100px;
-    font-size: 60px;
+    font-size: 20px;
     color: #fff;
-    background: rgba(28, 219, 181,0.7);
-    
+    text-align: center;
+    background: rgba(28, 219, 96, 0.84);
     font-weight: lighter;
-    opacity: 0;
+    border-radius: 5px;
+    opacity: 1;
     z-index: 99;
     top: -100%;
+    text-transform: uppercase;
     transition: all 0.4s cubic-bezier(0.56, -0.02, 0.58, 1);
+    text-shadow: 1px 1px 10px rgba(0, 0, 0, 0.57);
 }
         .msgaviso.active{
        

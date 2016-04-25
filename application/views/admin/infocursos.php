@@ -69,7 +69,7 @@
                                     <div class="form-group">
                                         <label class="col-md-4 control-label" for="selectbasic">Ativo</label>
                                         <div class="col-md-8">
-                                          <select id="name" ativo="ativo" class="form-control">
+                                          <select id="name" name="ativo" class="form-control">
                                           
                                            <option value="1">Sim</option>
                                            <option value="0">Não</option>
@@ -126,11 +126,7 @@
 
 
 
-                                      <a href="#" id="message-load-more">
-                                        <li class="text-center load-more">
-                                          <i class="fa fa-refresh"></i> Carregar mais..
-                                        </li>
-                                      </a>
+                                     
                                     </ul>
                                   </div>
                                 </div>

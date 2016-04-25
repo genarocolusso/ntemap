@@ -8,12 +8,13 @@ class Curso_model extends CI_Model {
     
     $this->db->where("idpolo",$this->input->post('polo', TRUE));
     $this->db->where("id",$this->input->post('hiddenidcurso', TRUE));
-    $query = $this->db->get();
+    $query = $this->db->get(); //checa se ja existe
     if ($query->num_rows() == 0)
-    {
+    {// se nao existe
 
      if(empty($this->input->post('nomecurso'))  ){
-
+        //sem nome faz nada
+         Echo "Digite o nome do curso";
 
      }else{
       $this->db->insert('curso', array(
@@ -106,7 +107,20 @@ public function polos(){
   return $data['polos'];
 }
 
- 
+ public function cursos(){
+  $data['cursos'] = [];
+
+  $this->db->select("*");
+  $this->db->from('curso');
+  $query = $this->db->get();
+  if ($query->num_rows() > 0)
+  {
+    $data['cursos'] = $query->result_array();
+  }
+
+  return $data['cursos'];
+}
+
  
 
 }

@@ -43,7 +43,7 @@
 $('#example').DataTable();
 
 $(document).on("click", ".message-block",  function(){
-   
+
   $("#contato").val($(".hiddeninfo", this).attr("contato"));
   $("#endereco").val($(".hiddeninfo",this).attr("endereco"));
   $("#email").val($(".hiddeninfo",this).attr("email"));
@@ -63,19 +63,30 @@ $(document).on("click", ".message-block",  function(){
 
 $(document).on("click",'.deletepolo', function(){
 
-   $("#idpolo").val($(this).attr('poloid'));
-   $("#ativo").val($(this).attr('ativo'));
-    $("#atualizastatus").submit();
+ $("#idpolo").val($(this).attr('poloid'));
+ $("#ativo").val($(this).attr('ativo'));
+ $("#atualizastatus").submit();
 });
+
+
+
 $(document).on('click', '.passadelete', function(){
-     $("#modalpradeleta").attr("poloid",($(this).attr('poloid')));
+ $("#modalpradeleta").attr("poloid",($(this).attr('poloid')));
+});
+$(document).on('click', '.passadeletecurso', function(){
+ $("#modalpradeletacurso").attr("cursoid",($(this).attr('cursoiddelet')));
 });
 $(document).on("click",'.deletepoloforreal', function(){
 
-   $("#deletedid").val($(this).attr('poloid'));
+ $("#deletedid").val($(this).attr('poloid'));
  
-    $("#deletarpolo").submit();
+ $("#deletarpolo").submit();
 });
+$(document).on("click",'.deletecursoforreal', function(){ 
+ $("#deletedidcurso").val($(this).attr('cursoid')); 
+ $("#deletacurso").submit();
+});
+
 
 $("#botaopraenviarpromapa").on("click", function(){
                         //alert("ola");
@@ -116,9 +127,28 @@ $("#botaopraenviarpromapa").on("click", function(){
 return false;
 });
 
+$(".passaarquivos").on("click", function(){
+                        //alert("ola");
+                        $("#pegaarquivos").val($(this).attr('arquivoid')); 
+                        $.ajax({ 
+
+                          url: BASE_URL+'index.php/painel/mostraarquivos',
+                          type: 'POST',
+                          data: $("#poloarquivo").serializeArray(),                                
+                          success: function(msg){
+                                 $('.modal-body').html(msg);
+                                 $('#mostraarquivos').modal('show') 
+                              }
+
+
+
+                            });
+                        return false;
+                      });
+
 
 $("#infoform").on("submit", function(){
-  
+
                         //alert("ola"); 
                         $.ajax({
 
@@ -137,6 +167,7 @@ $("#infoform").on("submit", function(){
                               success: function(gg){        
 
                                 $('.message-list').html(gg);
+                                $('#example').DataTable();
 
                               }           
                             });
@@ -165,16 +196,18 @@ $("#addcurso").on("submit", function(){
                             $(".msgaviso").html(msg);
                             $(".msgaviso").addClass("active");
                             setTimeout(function(){ $(".msgaviso").removeClass("active");  
-                            /* $.ajax({
-                              url:        BASE_URL+'painel/mostradadosatualizados',
+                             $.ajax({
+                              url:        BASE_URL+'painel/mostradadosatualizadosCURSOS',
                               type:       'POST',
                               cache:      false,
                               success: function(gg){        
 
                                 $('.message-list').html(gg);
 
+                                $('#example').DataTable();
+
                               }           
-                            }); */
+                            }); 
                            }, 4000);
 
                             jQuery.fn.reset = function(){

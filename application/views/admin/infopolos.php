@@ -10,7 +10,7 @@
             <?php
 
                                     $attr = 'id="infoform"'; //The form will have the id 'my_form'
-                                    echo form_open_multipart('',$attr);
+                                    echo form_open_multipart('Painel/atualizarpolo');
                                     ?>
 
                                     <fieldset>
@@ -70,7 +70,13 @@
 
 
                                     <!-- Button -->
-                                  
+                                   <div class="form-group">
+                                        <label class="col-md-4 control-label" for="singlebutton"> Adicionar Imagem do polo </label>
+                                      <div class="col-md-8">
+                                    <input type="file" name="userfile" size="20" /> 
+                                    
+                                    </div>
+                                     </div>
                                      
 
                                        <div class="form-group">
@@ -130,7 +136,7 @@
                                       <div class="caption">
                                         <h3 id="thumbnail-label">Editando<a class="anchorjs-link" href="#thumbnail-label"><span class="anchorjs-icon"></span></a></h3>
                                         <p>Você pode editar informações do Polo como: Endereço, Telefone de contato, email, nome de coordenação e entre oturos ao clicar no nome do polo  exibido na tabela.</p>
-                                        <p><a href="#" class="btn btn-success" role="button">Ok</a> </p>
+                                         
                                       </div>
 
                                     </div>

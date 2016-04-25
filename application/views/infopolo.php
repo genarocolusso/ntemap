@@ -3,7 +3,7 @@
 <?php 
 
 foreach ($polos as $key => $value) { ?>
-<header id="poloheader" style="background-image: url(../img/<?=$value['id']?>.jpg)">
+<header id="poloheader" style="background-image:linear-gradient(rgba(0, 0, 0, 0.88), rgba(23, 23, 23, 0.3)), url(../img/polos/<?=$value['id']?>_foto.jpg)">
 
   <div class="container text-center">
 
@@ -16,28 +16,30 @@ foreach ($polos as $key => $value) { ?>
 
 </header>
 <?php } ?>
-<section id="numeros" class="pad30">
+<section id="numeros"  >
   <div class="container text-center">
-
-    <br>
-
+   
     <?php if(isset($infopolo)){ ?>
-    <div class="numberpolos ">
-    <h1 class=""> Números do polo </h1><br>
+    <div class="numberpolos">
+    
       <div class="row">
-
-        <div class="col-sm-6" style="margin: 65px 0px;">
-          <div style="font-size:6em;">
+      <div class="col-xs-4">
+          <h5 class=""> Polo em dados: </h5> 
+      </div>
+        <div class="col-xs-4"  >
+           
             <?php 
             $nalunos = 0 ;
             foreach ($infopolo as $key => $value) {
               $nalunos += $value['numalunos'];
             } ?>
 
-            <span class="cresce"><?= $nalunos ?></span></div><br> Alunos
+           <h5> <span class="cresce"><?= $nalunos ?></span> Alunos </h5>
           </div>
-          <div class="col-sm-6" style="margin: 65px 0px;">
-            <span class="cresce2" style="font-size:6em;"><?= sizeof($infopolo)?></span><br>  Cursos
+          <div class="col-xs-4"  >
+            <h5>
+              <span class="cresce2" style="font-size: "><?= sizeof($infopolo)?></span> Cursos
+            </h5>
           </div>
 
 
@@ -118,7 +120,10 @@ foreach ($polos as $key => $value) { ?>
  <?php $this->load->view("includes/scriptos") ?>
 
  <footer  class="pad30 polofooter">
+   
 
+
+<div id="gImages"></div>
 
  </footer>
 
@@ -136,6 +141,24 @@ jQuery({ Counter: 0 }).animate({ Counter: $('.cresce2').text() }, {
   step: function () {
     $('.cresce2').text(Math.ceil(this.Counter));
   }
+});
+
+$.ajax({
+    url: "https://ajax.googleapis.com/ajax/services/search/images?v=1.0&q=barack%20obama&callback=?",
+    dataType: "jsonp",
+    success: function(data) {
+
+
+        for (var i = 0; i < data.responseData.results.length; i++) {
+
+            /* alert(data.responseData.results[i].tbUrl); */
+
+            $('#image-container').append('<img src="' + data.responseData.results[i].tbUrl + '">' + '<br>');
+
+        }
+    }
+
+
 });
   </script>
 

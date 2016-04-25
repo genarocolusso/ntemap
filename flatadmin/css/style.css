@@ -1144,7 +1144,13 @@ body.login-page {
 .marketing .col-lg-4 {
   margin-bottom: 20px;
   text-align: center; }
-
+   .dataTables_wrapper {
+    position: relative;
+    clear: both;
+    zoom: 1;
+    margin-top: 20px;
+    padding: 20px;
+}
 .marketing h2 {
   font-weight: normal; }
 

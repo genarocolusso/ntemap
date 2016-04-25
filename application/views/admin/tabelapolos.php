@@ -81,7 +81,7 @@
                                       ?>
 
 
-    <?php 
+                                    <?php 
                                     $attr = 'id="deletarpolo"'; //The form will have the id 'my_form'
                                     echo form_open_multipart('painel/deletarpolo',$attr);
                                     ?>
