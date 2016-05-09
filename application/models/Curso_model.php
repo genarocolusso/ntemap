@@ -50,9 +50,7 @@ class Curso_model extends CI_Model {
   Echo "Update realizado com sucesso";
 }
   
-}
-
- 
+} 
 
 }
 
@@ -121,6 +119,19 @@ public function polos(){
   return $data['cursos'];
 }
 
+public function pegaarquivoId($id){
  
+ $query =  $this->db->query("SELECT * FROM   `polo_arquivo`   WHERE  id_polo = $id");        
+  $data['arquivos'] =[];
+  if ($query->num_rows() > 0)
+  {
+    $data['arquivos'] = $query->result_array();
+  } 
+ 
+  return $data['arquivos'];
+ 
+}
+
+  
 
 }

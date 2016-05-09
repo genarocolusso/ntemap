@@ -41,14 +41,14 @@
                                     <div class="form-group">
                                       <label class="col-md-4 control-label" for="latitude">Endereço</label>  
                                       <div class="col-md-8">
-                                        <input id="endereco" name="endereco" type="text" placeholder="Rua John Doe 222" class="form-control input-md" required="">
+                                        <input id="endereco" name="endereco" type="text" placeholder="Rua John Doe 302" class="form-control input-md" required="">
 
                                       </div>
                                     </div>
                                     <div class="form-group">
                                       <label class="col-md-4 control-label" for="latitude">Email</label>  
                                       <div class="col-md-8">
-                                        <input id="email" name="email" type="email" placeholder="mary@mymail.com" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" class="form-control input-md" required="">
+                                        <input id="email" name="email" type="email" placeholder="johndoe@email.com" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" class="form-control input-md" required="">
 
                                       </div>
                                     </div>
@@ -116,10 +116,23 @@
                                     <input type="submit" value="upload" />
                                     </div>
                                      </div>
+
+  <br>
+                                      <div class="form-group">
+                                        <label class="col-md-4 control-label" for="selectbasic">Imagem para galeria?</label>
+                                        <div class="col-md-8">
+                                          <select id="selectbasic" name="galeria" class="form-control">
+                                            
+                                           <option value="1">Sim</option>
+                                           <option value="0">Não</option>
+                                            
+
+                                         </select>
+                                       </div>
+                                     </div>
                                    </fieldset>
                                        <?php  
-                                  echo form_close();
-                                  ?>
+                                  echo form_close();   ?>
                                   <br>  <br> 
 
                               <br>  
@@ -167,9 +180,7 @@
 
 
                                       <a href="#" id="message-load-more">
-                                        <li class="text-center load-more">
-                                          <i class="fa fa-refresh"></i> Carregar mais..
-                                        </li>
+                                         
                                       </a>
                                     </ul>
                                   </div>

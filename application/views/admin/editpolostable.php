@@ -41,7 +41,7 @@ if($polos){ ?>
               $narquivos = 0;
               if(isset($arquivos)){
                 foreach ($arquivos as $arquivo) {
-                  if($arquivo['id_polo']==$key['idpolo'])
+                  if( $arquivo['id_polo']==$key['idpolo']  && $arquivo['galeria']==0) 
                     $narquivos += 1;
                 }
               }
@@ -54,26 +54,10 @@ if($polos){ ?>
 
         </td> 
         <td>
-         <?php 
-                                    $attr = 'id="poloarquivo"'; //The form will have the id 'my_form'
-                                    echo form_open_multipart('painel/mostraarquivos',$attr);
-                                    ?>
-
-                                    <fieldset style="display:none">
-
-                                      <div class="form-group">
-
-                                        <div class="col-md-8">
-                                          <input id="pegaarquivos" name="poloarquivoid" type="text" placeholder="" class="form-control input-md" required="">
-
-                                        </div> </div></fieldset>
+                            
                                         <div class="passaarquivos btn btn-success" arquivoid='<?= $key["id"] ?>' title="arquivos" data-toggle="modal" data-target="#mostraarquivos">
                                          <i class="fa fa-file-archive-o"></i>
                                        </div>  
-                                       <?php 
-
-                                       echo form_close();
-                                       ?>
             </td>
 
 
@@ -93,7 +77,7 @@ if($polos){ ?>
                                       <h4 class="modal-title" id="myModalLabel">Clique no botão para deletar o arquivo.</h4>
                                     </div>
                                     <div class="modal-body">
-                                      <p>Arquivos do polo</p>
+                                       
                                     </div>
                                     <div class="modal-footer">
                                       <p class="text-muted"> cuidado, ao clicar no botão de deletar a ação não poderá ser revertida</p>  
@@ -101,3 +85,22 @@ if($polos){ ?>
                                   </div>
                                 </div>
                               </div>
+
+                                <?php 
+                                    $attr = 'class="poloarquivo"'; //The form will have the id 'my_form'
+                                    echo form_open_multipart('painel/mostraarquivos',$attr);
+                                    ?>
+
+                                    <fieldset style="display:none">
+
+                                      <div class="form-group">
+
+                                        <div class="col-md-8">
+                                          <input   name="poloarquivoid" type="text" placeholder="" class="pegaarquivos form-control input-md" required="">
+                                        
+                                        </div> </div></fieldset>
+                                       
+                                       <?php 
+
+                                       echo form_close();
+                                       ?>

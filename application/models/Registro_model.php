@@ -49,20 +49,15 @@ public function deletar(){
  
   $id = $this->input->post('deleted');
   $this->db->where('id', $id);
-  $this->db->delete('polos'); 
-  
-  echo "Deletado!";
-  
+  $this->db->delete('polos');  
+  echo "Deletado!"; 
 }
 
-public function deletarCurso(){
- 
+public function deletarCurso(){ 
   $id = $this->input->post('deleted');
   $this->db->where('id', $id);
-  $this->db->delete('curso'); 
-  
-  echo "Deletado!";
-  
+  $this->db->delete('curso');  
+  echo "Deletado!"; 
 }
 public function polos(){
   $data['polos'] = [];

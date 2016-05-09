@@ -40,9 +40,9 @@ var marker, i;
 for (i = 0; i < locations.length; i++) {  
     marker = new google.maps.Marker({
          position: new google.maps.LatLng(locations[i].latitude, locations[i].longitude),
-         icon: 'https://upload.wikimedia.org/wikipedia/commons/thumb/f/f9/Emoji_u1f422.svg/50px-Emoji_u1f422.svg.png',
+         //icon: 'https://upload.wikimedia.org/wikipedia/commons/thumb/f/f9/Emoji_u1f422.svg/50px-Emoji_u1f422.svg.png',
  
-         //icon: 'http://maps.google.com/mapfiles/ms/icons/blue-dot.png',
+         icon: 'img/blue.png',
          map: map
     });
 
@@ -57,29 +57,30 @@ for (i = 0; i < locations.length; i++) {
 } 
    function changeMap(locations, color){
   if(color=='blue'){
-     icone = 'https://upload.wikimedia.org/wikipedia/commons/thumb/f/f9/Emoji_u1f422.svg/50px-Emoji_u1f422.svg.png';
+    icone = 'img/blue.png';
   }
    if(color=='red'){
-     icone = 'https://upload.wikimedia.org/wikipedia/commons/thumb/9/9e/Emoji_u1f410.svg/50px-Emoji_u1f410.svg.png';
+    icone = 'img/red.png';
   }
   if(color=='green'){
-     icone = 'https://upload.wikimedia.org/wikipedia/commons/thumb/f/fa/Emoji_u1f430.svg/50px-Emoji_u1f430.svg.png';
+     icone = 'img/green.png';
   }
   map = new google.maps.Map(document.getElementById('map'), {
     zoom: 6,
-    center: {lat: -29.68725, lng: -53.8154499},    
-    styles:  [{"elementType":"geometry","stylers":[{"hue":"#ff4400"},{"saturation":-68},{"lightness":-4},{"gamma":0.72}]},{"featureType":"road","elementType":"labels.icon"},{"featureType":"landscape.man_made","elementType":"geometry","stylers":[{"hue":"#0077ff"},{"gamma":3.1}]},{"featureType":"water","stylers":[{"hue":"#00ccff"},{"gamma":0.44},{"saturation":-33}]},{"featureType":"poi.park","stylers":[{"hue":"#44ff00"},{"saturation":-23}]},{"featureType":"water","elementType":"labels.text.fill","stylers":[{"hue":"#007fff"},{"gamma":0.77},{"saturation":65},{"lightness":99}]},{"featureType":"water","elementType":"labels.text.stroke","stylers":[{"gamma":0.11},{"weight":5.6},{"saturation":99},{"hue":"#0091ff"},{"lightness":-86}]},{"featureType":"transit.line","elementType":"geometry","stylers":[{"lightness":-48},{"hue":"#ff5e00"},{"gamma":1.2},{"saturation":-23}]},{"featureType":"transit","elementType":"labels.text.stroke","stylers":[{"saturation":-64},{"hue":"#ff9100"},{"lightness":16},{"gamma":0.47},{"weight":2.7}]}]
+    center: {lat: -29.68725, lng: -53.8154499}  
+    //styles:  [{"elementType":"geometry","stylers":[{"hue":"#ff4400"},{"saturation":-68},{"lightness":-4},{"gamma":0.72}]},{"featureType":"road","elementType":"labels.icon"},{"featureType":"landscape.man_made","elementType":"geometry","stylers":[{"hue":"#0077ff"},{"gamma":3.1}]},{"featureType":"water","stylers":[{"hue":"#00ccff"},{"gamma":0.44},{"saturation":-33}]},{"featureType":"poi.park","stylers":[{"hue":"#44ff00"},{"saturation":-23}]},{"featureType":"water","elementType":"labels.text.fill","stylers":[{"hue":"#007fff"},{"gamma":0.77},{"saturation":65},{"lightness":99}]},{"featureType":"water","elementType":"labels.text.stroke","stylers":[{"gamma":0.11},{"weight":5.6},{"saturation":99},{"hue":"#0091ff"},{"lightness":-86}]},{"featureType":"transit.line","elementType":"geometry","stylers":[{"lightness":-48},{"hue":"#ff5e00"},{"gamma":1.2},{"saturation":-23}]},{"featureType":"transit","elementType":"labels.text.stroke","stylers":[{"saturation":-64},{"hue":"#ff9100"},{"lightness":16},{"gamma":0.47},{"weight":2.7}]}]
 }); 
   var infowindow = new google.maps.InfoWindow; 
   var marker, i; 
-for (i = 0; i < locations.length; i++) {  
+for (i = 0; i < locations.length; i++){  
     marker = new google.maps.Marker({ 
      position: new google.maps.LatLng(locations[i].latitude, locations[i].longitude),
      map: map,
-     icon: icone
-     //icon: 'http://maps.google.com/mapfiles/ms/icons/'+color+'-dot.png'
+     icon: icone,
+     
+      // icon: 'http://maps.google.com/mapfiles/ms/icons/'+color+'-dot.png'
    }); 
-    google.maps.event.addListener(marker, 'click', (function(marker, i) {
+    google.maps.event.addListener(marker, 'click', (function(marker, i){
          return function() {
               infowindow.setContent(locations[i].name+'<p><img src="img/polos/'+locations[i].id+'_foto.jpg" class="littleimg"></p> <p><a href="poloinfo/'+locations[i].id+'">Mais Informações</a></p>');
             infowindow.open(map, marker);

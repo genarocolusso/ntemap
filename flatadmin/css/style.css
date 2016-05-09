@@ -1,12 +1,17 @@
 html {
   height: 100%; }
-
+@import url(https://fonts.googleapis.com/css?family=Noticia+Text:400,700,400italic,700italic);
 body {
   padding-top: 0px;
   height: 100%;
   position: relative;
   font-size: 13px; }
+ h1,h2,h3,h4,h5 {
+  font-family: 'Noticia Text', serif;
 
+ }
+.table > thead > tr > th, .table > tbody > tr > th, .table > tfoot > tr > th, .table > thead > tr > td, .table > tbody > tr > td, .table > tfoot > tr > td{
+   vertical-align: middle !important;}
 * {
   outline: none; }
 .form-group {
@@ -1169,6 +1174,11 @@ body.login-page {
   font-weight: 300;
   line-height: 1;
   letter-spacing: -1px; }
+
+  .row{
+    margin-right: 0px !important;
+    margin-left: 0px !important;
+  }
 
 /* RESPONSIVE CSS
 -------------------------------------------------- */

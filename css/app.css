@@ -6,20 +6,30 @@ color: #fff;
   font-weight: 100;
   letter-spacing: 0.025em;
   line-height: 1.75em;
- 
-
+  
       
  font-family: 'Roboto', sans-serif;
  
 }  
 body, html{ 
-height: 100%;
-
+height: 100%; 
 width: 100%; 
 min-width: 300px;
 margin: 0; padding: 0;
 }
-  #map2{ border: 10px solid #fff; box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.44);}
+#gImages img.img-responsive.center-block {
+        height: 200px;
+    margin: 20px auto;
+    border: 2px solid #fff;
+    box-shadow: 1px 1px 10px rgba(0,0,0,0.3);
+        background: rgba(255, 255, 255, 0.73);
+
+}
+h1,h2,h3,h4,h5 {
+  font-family: 'Noticia Text', serif;
+
+ }
+#map2{ border: 10px solid #fff; box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.44);}
 #map{ min-height: 100% ;}
 #map2.formmap{ min-height: 400px; width: 80%; margin: 0px auto;}
   .colorgraph {
@@ -115,7 +125,10 @@ min-width: 300px;
   transition: all 500ms ease-in-out;
 
 }
- 
+  .row{
+    margin-right: 0px !important;
+    margin-left: 0px !important;
+  }
 #nav-toggle.active span {
   background-color: transparent;
 } 
@@ -248,7 +261,7 @@ position: relative;
     }
     .polofooter{
 
-      background: #747474;
+      background: #699469;
 
     }
     #numeros{

@@ -59,7 +59,7 @@ foreach ($polos as $key => $value) { ?>
      <?php foreach ($infocontato as $key => $value) {
       
         ?>
-         <h1 class=""> Informações sobre o polo </h1><br>
+         <h1 class="" > Informações sobre o polo </h1><br>
          <div class="row grey">
           <div class="col-md-4 mar10">
           <h3><i class="fa fa-comments-o"></i> Contato</h3>
@@ -101,14 +101,13 @@ foreach ($polos as $key => $value) { ?>
            <h3><i class="fa fa-book"></i> Pós-Graduação</h3>
            <div class="infotext">
            <?php foreach ($infopolo as $key => $value) {
-      
+           
            if($value['nivelgrad']==2){ ?>
          <p><?= $value['nome'] ?>  </p>
         <?php } }?>
           </div>
           </div>
-           
-           
+             
     </div>
     <br>
        <a href="<?=base_url()?>"><div class="btn btn-success btn-lg"><i class="fa fa-map-o"></i> Voltar para o mapa</div></a>
@@ -116,17 +115,48 @@ foreach ($polos as $key => $value) { ?>
 
   </section>
 
+<?php 
+ if(!empty($imagens)){ ?>
 
- <?php $this->load->view("includes/scriptos") ?>
-
- <footer  class="pad30 polofooter">
+ <div  class="pad30 polofooter">
    
+ <div style="width: 250px; margin: 20px auto;">
+  <h2 class="text-center" style="
+    border-bottom: 2px solid;
+"> Galeria </h2></div>
 
 
-<div id="gImages"></div>
+   <?php 
+  
+   if(isset($imagens)){ 
+    
+    echo '<div id="gImages" class="row"  >';
 
- </footer>
+      
+    foreach($imagens as $key => $value) {  
+     $extensao = explode('.', $value['arquivo_path']);
 
+    
+      if($extensao[1]=='jpg' | $extensao[1]=='png' | $extensao[1]=='bmp' ){ ?>
+      <div class="col-md-3" >
+        <a href="<?= base_url().$value['arquivo_path'] ?>"  data-lightbox="galeria">
+          <img src="<?= base_url().$value['arquivo_path'] ?>" class="img-responsive  center-block">
+        </a>
+      </div>
+
+    
+   <?php
+     }
+    
+     }
+       echo '</div>';
+      }?>
+
+
+
+ </div>
+  <?php  }?>
+ <?php $this->load->view("includes/scriptos") ?>
   <script type="text/javascript">
 jQuery({ Counter: 0 }).animate({ Counter: $('.cresce').text() }, {
   duration: 4000,

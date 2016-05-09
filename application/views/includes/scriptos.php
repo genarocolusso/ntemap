@@ -6,6 +6,7 @@
          <script src="<?php echo base_url(); ?>js/jquery.scrollTo.min.js"></script>  
          <script src="https://cdn.datatables.net/1.10.10/js/jquery.dataTables.min.js"></script> 
          <script src="<?php echo base_url(); ?>js/wow.min.js"></script>
+         <script src="<?php echo base_url(); ?>js/lightbox.js"></script>
          <script>
               new WOW().init();
          </script>

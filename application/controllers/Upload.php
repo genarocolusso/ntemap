@@ -16,38 +16,39 @@ class Upload extends CI_Controller {
 	function do_upload()
 	{
 		$config['upload_path'] = './uploads/';
-		$config['allowed_types'] = 'gif|jpg|png|pdf|docx|doc|ppt';
+		$config['allowed_types'] = '*';
 		$config['max_size']	= '8100';
-	/*	$config['max_width']  = '1024';
-		$config['max_height']  = '768';*/
 
+		$file_name = $_FILES['userfile']['name']; 
+
+		$config['file_name'] = $this->input->post('id_polo_click', TRUE).'_'.$file_name;
+	 
 		$this->load->library('upload', $config);
 
-		if ( ! $this->upload->do_upload())
-		{
-			$error = array('error' => $this->upload->display_errors());
-					print_r($error);
-			// redirect('/Painel/poloinfos');
-		}
-		else
-		{
-			$data  = $this->upload->data();
+	if ( ! $this->upload->do_upload())
+	{
+		$error = array('error' => $this->upload->display_errors());
+		print_r($error);
+		redirect('/Painel/poloinfos');
+	}
+	else
+	{
+		$data  = $this->upload->data();
+ 
+		$data1 = array(
 
-			 
-			$data1 = array(
-   
-        'arquivo_path' =>  'uploads/'.$this->input->post('id_polo_click', TRUE).'_'.$data['file_name'],
-         'id_polo' => 	$this->input->post('id_polo_click', TRUE)
-   					);
-			 $this->db->insert('polo_arquivo', $data1);
-			 // redirect('/Painel/poloinfos');
+			'arquivo_path' =>  'uploads/'.$data['file_name'],
+			'galeria' =>  $this->input->post('galeria'),
+			'id_polo' => 	$this->input->post('id_polo_click', TRUE)
+			);
+		$this->db->insert('polo_arquivo', $data1);
+		redirect('/Painel/poloinfos');
 			 			// adiciona arquivo na tabela polo_arquivo mais de um arquivo pode ser linkado a um polo
 
-
-		}
 	}
+}
 
 
-	
+
 }
 ?>

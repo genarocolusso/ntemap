@@ -10,8 +10,7 @@ class Welcome extends CI_Controller {
 		$this->load->helper('file');
 		$this->load->model('curso_model');
             // index carrega polos ativos e inativos e todos polos. para mostrar no mapa 
-			// faz 3 query pois eu estava com preguiça de dar um push dentro de ifs. provavelmente trabalhar com cache 
-		    // seja uma boa ideia aqui. porém ainda nao trabalhei. 
+			  
 	}
 	public function index()
 	{ $this->load->helper('url');
@@ -31,7 +30,7 @@ class Welcome extends CI_Controller {
 	$this->db->where('ativo', 0);
 	$query1 = $this->db->get();
 	if ($query1->num_rows() > 0)
-	{
+	{ 
 		$data['inativos'] = $query1->result_array();
 	}
 	$this->db->select("*");
@@ -47,14 +46,13 @@ class Welcome extends CI_Controller {
 }
 
 
-function poloinfo(){
-
+function poloinfo(){ 
 
 	$data['polos'] = $this->registro_model->polosid( $this->uri->segment(2,0));
 	$data['infocontato'] = $this->registro_model->infodopolo($this->uri->segment(2,0));
 	$data['infopolo'] = $this->curso_model->cursosporpolo( $this->uri->segment(2,0));
-
-
+	$data['imagens'] = $this->curso_model->pegaarquivoId( $this->uri->segment(2,0));
+ 
 	$this->load->view('infopolo',$data);
 }
 

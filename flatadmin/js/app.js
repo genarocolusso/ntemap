@@ -87,6 +87,16 @@ $(document).on("click",'.deletecursoforreal', function(){
  $("#deletacurso").submit();
 });
 
+$(document).on("click",'.passadeletearquivo', function(){ 
+ $("#deleteidarquivo").val($(this).attr('arquivodelete')); 
+ $("#filepath").val($(this).attr('filepath')); 
+
+ $("#deletaarquivo").submit();
+});
+ $(document).on("click", '.passaarquivos', function(){
+   $(".pegaarquivos").val($(this).attr('arquivoid')); 
+   $(".poloarquivo").submit();
+ });
 
 $("#botaopraenviarpromapa").on("click", function(){
                         //alert("ola");
@@ -127,14 +137,14 @@ $("#botaopraenviarpromapa").on("click", function(){
 return false;
 });
 
-$(".passaarquivos").on("click", function(){
+$(".poloarquivo").on("submit", function(){
                         //alert("ola");
-                        $("#pegaarquivos").val($(this).attr('arquivoid')); 
+                       
                         $.ajax({ 
 
                           url: BASE_URL+'index.php/painel/mostraarquivos',
                           type: 'POST',
-                          data: $("#poloarquivo").serializeArray(),                                
+                          data: $(".poloarquivo").serializeArray(),                                
                           success: function(msg){
                                  $('.modal-body').html(msg);
                                  $('#mostraarquivos').modal('show') 
