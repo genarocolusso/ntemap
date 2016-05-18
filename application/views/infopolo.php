@@ -24,9 +24,8 @@ foreach ($polos as $key => $value) { ?>
     
       <div class="row">
       <div class="col-xs-4">
-          <h5 class=""> Polo em dados: </h5> 
-      </div>
-        <div class="col-xs-4"  >
+          <h5 class=""> Polo em dados: 
+      
            
             <?php 
             $nalunos = 0 ;
@@ -34,10 +33,9 @@ foreach ($polos as $key => $value) { ?>
               $nalunos += $value['numalunos'];
             } ?>
 
-           <h5> <span class="cresce"><?= $nalunos ?></span> Alunos </h5>
-          </div>
-          <div class="col-xs-4"  >
-            <h5>
+           <span class="cresce"><?= $nalunos ?></span> Alunos  e
+           
+             
               <span class="cresce2" style="font-size: "><?= sizeof($infopolo)?></span> Cursos
             </h5>
           </div>
@@ -109,35 +107,33 @@ foreach ($polos as $key => $value) { ?>
           </div>
              
     </div>
-    <br>
-       <a href="<?=base_url()?>"><div class="btn btn-success btn-lg"><i class="fa fa-map-o"></i> Voltar para o mapa</div></a>
+    
     </div>
 
   </section>
 
-<?php 
- if(!empty($imagens)){ ?>
-
- <div  class="pad30 polofooter">
+ 
    
- <div style="width: 250px; margin: 20px auto;">
-  <h2 class="text-center" style="
-    border-bottom: 2px solid;
-"> Galeria </h2></div>
-
+ <div  class="pad30 polofooter">
+    
 
    <?php 
   
-   if(isset($imagens)){ 
+   if(count($imagens)>0){ 
     
-    echo '<div id="gImages" class="row"  >';
+    echo ' 
+        <div style="width: 250px; margin: 20px auto;">
+  <h2 class="text-center" style="
+    border-bottom: 2px solid;
+"> Imagens </h2></div>
+    <div id="gImages" class="row"  >';
 
       
     foreach($imagens as $key => $value) {  
      $extensao = explode('.', $value['arquivo_path']);
 
     
-      if($extensao[1]=='jpg' | $extensao[1]=='png' | $extensao[1]=='bmp' ){ ?>
+      if(($extensao[1]=='jpg' | $extensao[1]=='png' | $extensao[1]=='bmp') && $value['galeria']==1){ ?>
       <div class="col-md-3" >
         <a href="<?= base_url().$value['arquivo_path'] ?>"  data-lightbox="galeria">
           <img src="<?= base_url().$value['arquivo_path'] ?>" class="img-responsive  center-block">
@@ -150,12 +146,37 @@ foreach ($polos as $key => $value) { ?>
     
      }
        echo '</div>';
+      echo '<div style="width: 250px; margin: 20px auto;">
+  <h2 class="text-center" style="
+    border-bottom: 2px solid;
+"> Arquivos </h2></div><div class="container">';
+     foreach($imagens as $key => $value) {  
+     $extensao = explode('.', $value['arquivo_path']);
+     $extensao[1] =  strtolower($extensao[1]);
+     $nomearquivo = explode('/', $value['arquivo_path']);
+      if($extensao[1]!='jpg' | $extensao[1]!='png' | $extensao[1]!='bmp' ){ ?>
+       
+         <a href="<?= base_url().$value['arquivo_path'] ?>" style="color: #C9FFC9;">
+          <p><i class="fa fa-file-text"></i> <?= $nomearquivo[1]; ?></p>
+        </a>
+
+    
+   <?php
+    
+     }
+       
+     }   
+echo '</div>';
+
       }?>
 
-
+<br>
+       <a href="<?=base_url()?>" class="center-block" style="width: 220px;"><div class="btn btn-success btn-lg"><i class="fa fa-map-o"></i> Voltar para o mapa</div></a>
 
  </div>
-  <?php  }?>
+   
+
+  
  <?php $this->load->view("includes/scriptos") ?>
   <script type="text/javascript">
 jQuery({ Counter: 0 }).animate({ Counter: $('.cresce').text() }, {

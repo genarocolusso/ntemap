@@ -6,7 +6,7 @@
     <tr><td> </td><td></td><td></td></tr>
     
   </thead>
-  <tbody > 
+  <tbody> 
    <?php
    if(isset($dadosarquivos['arquivos'])  ){
 

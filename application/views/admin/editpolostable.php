@@ -41,7 +41,7 @@ if($polos){ ?>
               $narquivos = 0;
               if(isset($arquivos)){
                 foreach ($arquivos as $arquivo) {
-                  if( $arquivo['id_polo']==$key['idpolo']  && $arquivo['galeria']==0) 
+                  if( $arquivo['id_polo']==$key['idpolo']  ) 
                     $narquivos += 1;
                 }
               }

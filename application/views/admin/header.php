@@ -27,33 +27,7 @@
             border: 4px solid #fff;
             border-radius: 10px;
             box-shadow: 0px 0px 9px rgba(0,0,0,0.6);    }
-            .msgaviso{
-       
-   position: absolute;
-    height: 40px;
-    width: 100%;
-    padding: 100px;
-    font-size: 20px;
-    color: #fff;
-    text-align: center;
-    background: rgba(28, 219, 96, 0.84);
-    font-weight: lighter;
-    border-radius: 5px;
-    opacity: 1;
-    z-index: 99;
-    top: -100%;
-    text-transform: uppercase;
-    transition: all 0.4s cubic-bezier(0.56, -0.02, 0.58, 1);
-    text-shadow: 1px 1px 10px rgba(0, 0, 0, 0.57);
-}
-        .msgaviso.active{
-       
-     
-    opacity: 1;
-    top:0px;
-
-    transition: all 0.4s cubic-bezier(0.56, -0.02, 0.58, 1);
-}
+         
     </style>
     <script type="text/javascript">
     var BASE_URL = "<?php echo base_url();?>";

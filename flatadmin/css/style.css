@@ -10,6 +10,30 @@ body {
   font-family: 'Noticia Text', serif;
 
  }
+ .msgaviso{
+width: 400px;
+    padding: 50px;
+    font-size: 18px;
+    color: #fff;
+    text-align: center;
+    background: rgba(28, 219, 96, 0.84);
+    font-weight: lighter;
+    border-radius: 5px;
+    opacity: 0;
+    text-transform: uppercase;
+    transition: all 0.4s cubic-bezier(0.56, -0.02, 0.58, 1);
+    text-shadow: 1px 1px 10px rgba(0, 0, 0, 0.57);
+     position: absolute;
+}
+.msgaviso.active{
+   opacity: 1;
+    top: 40px;
+    z-index: 120000;
+    position: absolute;
+    right: 20px;
+    transition: all 0.4s cubic-bezier(0.56, -0.02, 0.58, 1);
+}
+ 
 .table > thead > tr > th, .table > tbody > tr > th, .table > tfoot > tr > th, .table > thead > tr > td, .table > tbody > tr > td, .table > tfoot > tr > td{
    vertical-align: middle !important;}
 * {
