@@ -8,9 +8,7 @@ class Validlogin extends CI_Model {
                   echo '<a href="'.base_url().'Login/index"> Clique aqui</a>';
                    die();      
                  }
- 
-
-
+  
     
     }
     function logar(){
