@@ -4,7 +4,7 @@ class Validlogin extends CI_Model {
   public function logged(){
           $logged = $this->session->userdata('logged');
                    if (!isset($logged) || $logged != true){ 
-                  echo 'Voce nao tem permissao para entrar nessa pagina. Efetuar Login';
+                  echo 'Voce nao tem permissão para entrar nessa página. Efetuar Login';
                   echo '<a href="'.base_url().'Login/index"> Clique aqui</a>';
                    die();      
                  }

@@ -19,7 +19,7 @@ foreach ($polos as $key => $value) { ?>
 <section id="numeros"  >
   <div class="container text-center">
    
-    <?php if(isset($infopolo)){ ?>
+    
     <div class="numberpolos">
     
       <div class="row">
@@ -43,21 +43,25 @@ foreach ($polos as $key => $value) { ?>
 
         </div>
       </div>
-      <?php }else {
-        ?>
-        <div class="alert alert-danger">
-          <h2> Sem Informações </h2>
-          <p> No momento não temos informações adicionadas ao curso. </p>
-        </div>
-        <?php } ?>
+       
+       
       </div>
     </section>
     <section id="poloscontatos" class="pad30">
     <div class="container text-center">
-     <?php foreach ($infocontato as $key => $value) {
+         <h1> Informações sobre o polo </h1><br>
+     <?php
+      if(isset($infocontato)){
+        ?>  <div class="alert alert-danger">
+          <h2> Sem Informações </h2>
+          <p> No momento não temos informações adicionadas ao polo. </p>
+        </div>
+         <?php 
+      }
+      foreach ($infocontato as $key => $value) {
       
         ?>
-         <h1 class="" > Informações sobre o polo </h1><br>
+      
          <div class="row grey">
           <div class="col-md-4 mar10">
           <h3><i class="fa fa-comments-o"></i> Contato</h3>
@@ -122,16 +126,14 @@ foreach ($polos as $key => $value) { ?>
    if(count($imagens)>0){ 
     
     echo ' 
-        <div style="width: 250px; margin: 20px auto;">
-  <h2 class="text-center" style="
-    border-bottom: 2px solid;
-"> Imagens </h2></div>
+        <div  >
+  <h2  class="text-center" > Imagens </h2></div>
     <div id="gImages" class="row"  >';
 
       
     foreach($imagens as $key => $value) {  
      $extensao = explode('.', $value['arquivo_path']);
-
+     $extensao[1] = strtolower($extensao[1]);
     
       if(($extensao[1]=='jpg' | $extensao[1]=='png' | $extensao[1]=='bmp') && $value['galeria']==1){ ?>
       <div class="col-md-3" >
@@ -146,15 +148,13 @@ foreach ($polos as $key => $value) { ?>
     
      }
        echo '</div>';
-      echo '<div style="width: 250px; margin: 20px auto;">
-  <h2 class="text-center" style="
-    border-bottom: 2px solid;
-"> Arquivos </h2></div><div class="container">';
+      echo '<div  >
+  <h2 class="text-center"  > Arquivos </h2></div><div class="container">';
      foreach($imagens as $key => $value) {  
      $extensao = explode('.', $value['arquivo_path']);
      $extensao[1] =  strtolower($extensao[1]);
      $nomearquivo = explode('/', $value['arquivo_path']);
-      if($extensao[1]!='jpg' | $extensao[1]!='png' | $extensao[1]!='bmp' ){ ?>
+      if( $value['galeria']==0){ ?>
        
          <a href="<?= base_url().$value['arquivo_path'] ?>" style="color: #C9FFC9;">
           <p><i class="fa fa-file-text"></i> <?= $nomearquivo[1]; ?></p>
