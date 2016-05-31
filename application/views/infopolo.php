@@ -5,9 +5,7 @@
 foreach ($polos as $key => $value) { ?>
 <header id="poloheader" style="background-image:linear-gradient(rgba(0, 0, 0, 0.88), rgba(23, 23, 23, 0.3)), url(../img/polos/<?=$value['id']?>_foto.jpg)">
 
-  <div class="container text-center">
-
-
+  <div class="container text-center">  
     <h1 style="color: #fff; text-shadow: 1px 1px 9px #000">
       <img class="icon icons8-Map-Marker" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAADB0lEQVRoQ+2ZT2jTUBzHv2natU16cOBUEKTuIlTZ9DAREepFVEbZQa/W4Rwy/5wK7uSGNzvwNEF3GerF7SYoKE6mIhUFoYpD2EXUTVEoirikts0SSXRp0uUlL3MuKSTH8Pp738/v+33vJSmDJr+YJtePAMBrBwMHmtoB5fu9JGSpBzJ6Ic7sAMu9ARPOM5vPTK4GmLE+05bZZVXTdYRMohns1IsuFOv1QxEJoZXBkOoz6zOWWqkAiKKNLTECGO9TwNDUdw1AU9RkKQmAAAOu/YUeP6OThOy5ByjdUVzlmAbAWDBhGWnilAGAoxuBA/YtCiL0zxESq6gV5iEV5iDP/dTKhZIbEU53IpLuAPi47RSeOrA4W8Kv0ZdAWbIWyUURH8oitHWT/3YhTfzIc0cD1QHxS/1ECG8cEKsQzk+TO9+AxbStA5c/aRknTwBqU+9QnXhbl8nxiGZPIdy1F+ATkB4/QOXmGCAK+piW7AFEuvcsc8wTgPLIM8iz33QxsdwQWFW84ZKeTKFy9bJ+J5TagvjwcX8ACH13TUL4ifvL14KwAKHvqHnc5IUmAhAFCCeO+BOg6SNUvTWD2sP3pkUcG8iB3d4JcDy0/N+4ZlrEkcO70dJ70B8RUkoCxMFHVGfA0iBu9CyYDa3+AFBVNMbIjoa0A6m/8WQbVSd2cxLHho+BTSUtGT0DoHXBrvueOqBOLn/8gfLFp7Zrwe45yHMAVUBlvAip8MkSIpzuQPR0jy2gpxHSlKkPdoPTgNjwSM1FwV855+/3gaXWqi8zlfHXpk5HBzII769/HyPZ4L0Df5UZt1WnhWuE8Q2AdrhpC5oFl++3PLSsXPANgHY2FL8AsXawXduoT2lfAWiqgy9zf8wjfp1W6L6NfgBwG2zoOsrzCSxWc5DFQ1AqMcds0Dmg12dau19Zrg3SRDYAjkWVz2P7HGHIAI71TbsTJYCrosaaRBgzwIrr20VIfRPR4kGyzzEmDQNMMHzq62rUp/qHxq3QtRwfAKxlt13tQl4Lo50/iBBtp/7XuN9Pl99ApktZ6wAAAABJRU5ErkJggg==" width="54" height="54">
       Polo - <?=$value['name']?></h1>

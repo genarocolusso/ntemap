@@ -2,12 +2,12 @@
 class Validlogin extends CI_Model {
 
   public function logged(){
-          $logged = $this->session->userdata('logged');
+          $logged = $this->session->userdata('logged');// checa se logado 
                    if (!isset($logged) || $logged != true){ 
                   echo 'Voce nao tem permissão para entrar nessa página. Efetuar Login';
                   echo '<a href="'.base_url().'Login/index"> Clique aqui</a>';
                    die();      
-                 }
+                 } 
   
     
     }
