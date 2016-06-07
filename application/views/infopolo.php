@@ -1,9 +1,15 @@
 <?php header('Access-Control-Allow-Origin: *'); ?>
 <?php $this->load->view("infopolos/header") ?>
-<?php 
+
+  <?php 
+  foreach ($infocontato as $key => $value) {?>
+        <header id="poloheader" style="background-image:linear-gradient(rgba(0, 0, 0, 0.88), rgba(23, 23, 23, 0.3)), url(<?=$value['img']?>)">
+
+     <?php 
+   } ?> 
+   <?php 
 
 foreach ($polos as $key => $value) { ?>
-<header id="poloheader" style="background-image:linear-gradient(rgba(0, 0, 0, 0.88), rgba(23, 23, 23, 0.3)), url(../img/polos/<?=$value['id']?>_foto.jpg)">
 
   <div class="container text-center">  
     <h1 style="color: #fff; text-shadow: 1px 1px 9px #000">
@@ -32,30 +38,7 @@ foreach ($polos as $key => $value) { ?>
   <section id="numeros"  >
     <div class="container text-center">
 
-
-    <!-- <div class="numberpolos">
-
-      <div class="row">
-        <div class="col-xs-4">
-          <h5 class=""> Polo em dados: 
-
-
-            <?php 
-            $nalunos = 0 ;
-            foreach ($infopolo as $key => $value) {
-              $nalunos += $value['numalunos'];
-            } ?>
-
-            <span class="cresce"><?= $nalunos ?></span> Alunos  e
-
-
-            <span class="cresce2" style="font-size: "><?= sizeof($infopolo)?></span> Cursos
-          </h5>
-        </div>
-
-
-      </div>
-    </div> -->
+ 
 
 
   </div>

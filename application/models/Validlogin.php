@@ -7,8 +7,7 @@ class Validlogin extends CI_Model {
                   echo 'Voce nao tem permissão para entrar nessa página. Efetuar Login';
                   echo '<a href="'.base_url().'Login/index"> Clique aqui</a>';
                    die();      
-                 } 
-  
+                 }  
     
     }
     function logar(){

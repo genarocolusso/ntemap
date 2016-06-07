@@ -27,7 +27,7 @@ $ip = $_SERVER['SERVER_ADDR'];
 $ip = ($ip == '::1' ? 'localhost' : $ip);
 $user = get_current_user();*/ 
 
-$config['base_url'] = '/polos';
+$config['base_url'] = '/ntemap';
 /*
 |--------------------------------------------------------------------------
 | Index File

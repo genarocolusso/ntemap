@@ -25,7 +25,7 @@ if($polos){ ?>
       <td>
         <img src="<?php base_url()?><?= $key['img'] ?>" style="width: 50px; height: 50px;margin-right: 10px;" class="profile-img pull-left">
         <div class="message-block updateddata">
-          <div><span class="username"><?= $key['name'] ?></span> <span class="message-datetime">100 Alunos</span>
+          <div><span class="username"><?= $key['name'] ?></span> 
           </div>
           <?php if($key['endereco']){ ?>
           <div class="message"> <?= $key['endereco'] ?></div>

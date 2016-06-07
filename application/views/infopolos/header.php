@@ -4,15 +4,14 @@
   <meta charset="utf-8">
   <title> maps</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="test">
-    <meta name="keywords" content="test">
-    <meta name="author" content="test"> 
+    <meta name="description" content="Visualização em mapa de todos os polos do EaD/UAB e suas informações de contato">
+    <meta name="keywords" content="NTE, UFSM, UAB">
+    <meta name="author" content="NTE - UFSM"> 
 
 <meta property="og:type" content="website" />
-<meta property="og:title" content="test" />
-<meta property="og:url" content="test" />
-<meta property="og:description" content="test" />
-<meta property="og:image" content="test" />
+<meta property="og:title" content="NTE Polos" /> 
+<meta property="og:description" content="Visualização em mapa de todos os polos do EaD/UAB e suas informações de contato" />
+ 
   <!-- This is how you would link your custom stylesheet -->
    <link rel="stylesheet" href="<?php echo base_url(); ?>css/animate.css">
 

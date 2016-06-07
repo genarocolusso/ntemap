@@ -48,12 +48,11 @@ for (i = 0; i < locations.length; i++) {
 
     google.maps.event.addListener(marker, 'click', (function(marker, i) {
          return function() {
-             infowindow.setContent(locations[i].name+'<p><img src="img/polos/'+locations[i].id+'_foto.jpg" class="littleimg"></p> <p><a href="poloinfo/'+locations[i].id+'">Mais Informações</a></p>');
-             infowindow.open(map, marker);
+              infowindow.setContent(locations[i].name+'<p><a href="poloinfo/'+locations[i].id+'">Mais Informações</a></p>');
+              infowindow.open(map, marker);
          }
     })(marker, i)); 
-      $(".coords").append(' <p data-lat="'+locations[i][1]+'" data-long="'+locations[i][2]+'"> '+locations[i][0]+' </p>     <p><a href="poloinfo/'+locations[i].id+'">Mais Informações</a></p>');
- } 
+       } 
 } 
    function changeMap(locations, color){
   if(color=='blue'){
@@ -82,12 +81,11 @@ for (i = 0; i < locations.length; i++){
    }); 
     google.maps.event.addListener(marker, 'click', (function(marker, i){
          return function() {
-              infowindow.setContent(locations[i].name+'<p><img src="img/polos/'+locations[i].id+'_foto.jpg" class="littleimg"></p> <p><a href="poloinfo/'+locations[i].id+'">Mais Informações</a></p>');
+              infowindow.setContent(locations[i].name+'<p><a href="poloinfo/'+locations[i].id+'">Mais Informações</a></p>');
             infowindow.open(map, marker);
          }
     })(marker, i)); 
-    $(".coords").append(' <p data-lat="'+locations[i][1]+'" data-long="'+locations[i][2]+'"> '+locations[i][0]+' </p>     <p><a href="poloinfo/'+locations[i].id+'">Mais Informações</a></p>');
- }
+      }
 
 }   
    

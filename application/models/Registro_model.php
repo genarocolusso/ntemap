@@ -89,31 +89,29 @@ public function polosid($id){
 }
 
 public function atualizar(){ 
-  $config['upload_path'] = './img/polos';
-    $config['allowed_types'] = 'jpg';
+    $config['upload_path'] = './img/polos/';
+    $config['allowed_types'] = '*';
     $config['max_size'] = '4100';
     $config['overwrite'] = TRUE;
     $config['remove_spaces'] = TRUE;
-    $config['file_name'] = $this->input->post('polo').'_foto';
-  /*  $config['max_width']  = '1024';
-    $config['max_height']  = '768';*/
 
-    $this->load->library('upload', $config);
-
+    $userfile_extn = explode(".", strtolower($_FILES['userfile']['name']));
+     
+    $config['file_name'] = $this->input->post('polo').'_foto.'.$userfile_extn[1];
+    
+    $this->load->library('upload', $config); 
     if ( !$this->upload->do_upload())
     {
-
-      Echo "Um erro aconteceu ao carregar a imagem"; 
-      $imgs= base_url().'/img/polos/'.$this->input->post('polo').'_foto.jpg';
-    
+      $error = array('error' => $this->upload->display_errors());
+      print_r($error);
+      Echo "Um erro aconteceu ao carregar a imagem";  
     }
     else
     {
       $data9  = $this->upload->data();
  
-       
-          $imgs= base_url().'/img/polos/'.$this->input->post('polo').'_foto.jpg';
-    $config['allowed_types'] = 'jpg';;
+    $imgs= base_url().'img/polos/'.$this->input->post('polo').'_foto.'.$userfile_extn[1];
+    $config['allowed_types'] = '*';
            
             // adiciona arquivo na tabela polo_arquivo mais de um arquivo pode ser linkado a um polo
 
@@ -134,7 +132,7 @@ public function atualizar(){
   $this->db->where('idpolo', $this->input->post('polo'));
   $this->db->update('polo_info', $data);
   Echo "Polo Atualizado!";
-  redirect("painel/poloinfos");
+  //redirect("painel/poloinfos");
          
 }
 
