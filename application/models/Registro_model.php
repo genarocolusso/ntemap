@@ -114,8 +114,7 @@ public function atualizar(){
     $config['allowed_types'] = '*';
            
             // adiciona arquivo na tabela polo_arquivo mais de um arquivo pode ser linkado a um polo
-
-
+ 
     }
 
 
@@ -123,6 +122,7 @@ public function atualizar(){
    
    'contato' => $this->input->post('contato', TRUE),
    'email' => $this->input->post('email', TRUE),
+   'site' => $this->input->post('site', TRUE),
    'coordenacao' => $this->input->post('coordenacao', TRUE),
    'coordemail' => $this->input->post('coordemail', TRUE),
    'endereco' => $this->input->post('endereco', TRUE),

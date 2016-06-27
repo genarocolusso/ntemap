@@ -45,6 +45,13 @@
 
                                       </div>
                                     </div>
+                                     <div class="form-group">
+                                      <label class="col-md-4 control-label" for="latitude">Site</label>  
+                                      <div class="col-md-8">
+                                        <input id="site" name="site" type="text" placeholder="www.sitedopolo.com" class="form-control input-md" required="">
+
+                                      </div>
+                                    </div>
                                     <div class="form-group">
                                       <label class="col-md-4 control-label" for="latitude">Email</label>  
                                       <div class="col-md-8">

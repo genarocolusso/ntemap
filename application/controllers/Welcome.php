@@ -53,7 +53,18 @@ function poloinfo(){
 	$data['infopolo'] = $this->curso_model->cursosporpolo( $this->uri->segment(2,0));
 	$data['imagens'] = $this->curso_model->pegaarquivoId( $this->uri->segment(2,0));
  
+  $data['existearquivo'] = 0;
+    foreach($data['imagens'] as $key => $value) {  
+        
+         if( $value['galeria']==0){  
+ 				$data['existearquivo'] += 1;
+      } 
+
+    } 
+ 
+
 	$this->load->view('infopolo',$data);
 }
 
 }
+ 

@@ -34,4 +34,8 @@
 </head>
  
 <body class="preload">
+  <div class="howto">
+    <h2> Visualizando o polo </h2>
+    <p>Clique nos edifícios para obter mais informações sobre o polo.</p>
+  </div>
 <div class="msgaviso"> Aviso </div>

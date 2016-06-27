@@ -48,6 +48,7 @@ $(document).on("click", ".message-block",  function(){
   $("#endereco").val($(".hiddeninfo",this).attr("endereco"));
   $("#email").val($(".hiddeninfo",this).attr("email"));
   $("#coordenacao").val($(".hiddeninfo",this).attr("coordenacao"));
+  $("#site").val($(".hiddeninfo",this).attr("site"));
   $("#coordemail").val($(".hiddeninfo",this).attr("coordemail"));
   $("#selectbasic").val($(".hiddeninfo",this).attr("idpolo"));
   $("#id_polo_click").val($(".hiddeninfo",this).attr("idpolo"));
@@ -93,10 +94,10 @@ $(document).on("click",'.passadeletearquivo', function(){
 
  $("#deletaarquivo").submit();
 });
- $(document).on("click", '.passaarquivos', function(){
-   $(".pegaarquivos").val($(this).attr('arquivoid')); 
-   $(".poloarquivo").submit();
- });
+$(document).on("click", '.passaarquivos', function(){
+ $(".pegaarquivos").val($(this).attr('arquivoid')); 
+ $(".poloarquivo").submit();
+});
 
 $("#botaopraenviarpromapa").on("click", function(){
                         //alert("ola");
@@ -139,20 +140,20 @@ return false;
 
 $(".poloarquivo").on("submit", function(){
                         //alert("ola");
-                       
+                        
                         $.ajax({ 
 
                           url: BASE_URL+'index.php/painel/mostraarquivos',
                           type: 'POST',
                           data: $(".poloarquivo").serializeArray(),                                
                           success: function(msg){
-                                 $('.modal-body').html(msg);
-                                 $('#mostraarquivos').modal('show') 
-                              }
+                           $('.modal-body').html(msg);
+                           $('#mostraarquivos').modal('show') 
+                         }
 
 
 
-                            });
+                       });
                         return false;
                       });
 
