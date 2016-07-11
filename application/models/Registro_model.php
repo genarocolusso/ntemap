@@ -100,11 +100,13 @@ public function atualizar(){
     $config['file_name'] = $this->input->post('polo').'_foto.'.$userfile_extn[1];
     
     $this->load->library('upload', $config); 
+     $imgs = "nao";
     if ( !$this->upload->do_upload())
     {
       $error = array('error' => $this->upload->display_errors());
       print_r($error);
       Echo "Um erro aconteceu ao carregar a imagem";  
+     
     }
     else
     {
@@ -113,26 +115,29 @@ public function atualizar(){
     $imgs= base_url().'img/polos/'.$this->input->post('polo').'_foto.'.$userfile_extn[1];
     $config['allowed_types'] = '*';
            
-            // adiciona arquivo na tabela polo_arquivo mais de um arquivo pode ser linkado a um polo
+    // adiciona arquivo na tabela polo_arquivo mais de um arquivo pode ser linkado a um polo
  
     }
-
-
-  $data = array(
+ 
    
-   'contato' => $this->input->post('contato', TRUE),
-   'email' => $this->input->post('email', TRUE),
-   'site' => $this->input->post('site', TRUE),
-   'coordenacao' => $this->input->post('coordenacao', TRUE),
-   'coordemail' => $this->input->post('coordemail', TRUE),
-   'endereco' => $this->input->post('endereco', TRUE),
-   'img' => $imgs
+  if($imgs != "nao"){
+    $data['img'] = $imgs;
+  }
+   
+   $data['contato'] = $this->input->post('contato', TRUE);
+   $data['email'] = $this->input->post('email', TRUE);
+   $data['nomepolo'] = $this->input->post('nomepolo', TRUE);
+   $data['site'] = $this->input->post('site', TRUE);
+   $data['coordenacao'] = $this->input->post('coordenacao', TRUE);
+   $data['coordemail'] = $this->input->post('coordemail', TRUE);
+   $data['endereco'] = $this->input->post('endereco', TRUE);
+    
 
-   );
+   
   $this->db->where('idpolo', $this->input->post('polo'));
   $this->db->update('polo_info', $data);
   Echo "Polo Atualizado!";
-  //redirect("painel/poloinfos");
+  redirect("painel/poloinfos");
          
 }
 

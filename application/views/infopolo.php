@@ -2,7 +2,10 @@
 <?php $this->load->view("infopolos/header") ?>
 
 <?php 
-foreach ($infocontato as $key => $value) {?>
+foreach ($infocontato as $key => $value) {
+ 
+  ?>
+
 <a href="<?=$value['img']?>" data-lightbox="galeria" style="
   text-decoration: none; color: #fff;
   ">  <header id="poloheader" style="background-image:linear-gradient(rgba(0, 0, 0, 0.88), rgba(23, 23, 23, 0.3)), url(<?=$value['img']?>)"  >
@@ -209,25 +212,8 @@ foreach ($polos as $key => $value) { ?>
     step: function () {
       $('.cresce2').text(Math.ceil(this.Counter));
     }
-  });
-
-  $.ajax({
-    url: "https://ajax.googleapis.com/ajax/services/search/images?v=1.0&q=barack%20obama&callback=?",
-    dataType: "jsonp",
-    success: function(data) {
-
-
-      for (var i = 0; i < data.responseData.results.length; i++) {
-
-        /* alert(data.responseData.results[i].tbUrl); */
-
-        $('#image-container').append('<img src="' + data.responseData.results[i].tbUrl + '">' + '<br>');
-
-      }
-    }
-
-
-  });
+  }); 
+  
   </script>
 
 

@@ -34,47 +34,55 @@
                                      <div class="form-group">
                                       <label class="col-md-4 control-label" for="latitude">Contato</label>  
                                       <div class="col-md-8">
-                                        <input id="contato" name="contato" type="text" placeholder="(55) 2222-2222, (55) 3333-3333" class="form-control input-md" required="">
+                                        <input id="contato" name="contato" type="text" placeholder="(55) 2222-2222, (55) 3333-3333" class="form-control input-md"  >
 
                                       </div>
                                     </div>
                                     <div class="form-group">
+                                      <label class="col-md-4 control-label" for="latitude">Nome do Polo</label>  
+                                      <div class="col-md-8">
+                                        <input id="nomepolo" name="nomepolo"  placeholder="nome do polo" class="form-control input-md" >
+
+                                      </div>
+                                    </div>
+
+                                    <div class="form-group">
                                       <label class="col-md-4 control-label" for="latitude">Endereço</label>  
                                       <div class="col-md-8">
-                                        <input id="endereco" name="endereco" type="text" placeholder="Rua John Doe 302" class="form-control input-md" required="">
+                                        <input id="endereco" name="endereco" type="text" placeholder="Rua John Doe 302" class="form-control input-md"  >
 
                                       </div>
                                     </div>
                                      <div class="form-group">
                                       <label class="col-md-4 control-label" for="latitude">Site</label>  
                                       <div class="col-md-8">
-                                        <input id="site" name="site" type="text" placeholder="www.sitedopolo.com" class="form-control input-md" required="">
+                                        <input id="site" name="site" type="text" placeholder="www.sitedopolo.com" class="form-control input-md"  >
 
                                       </div>
                                     </div>
                                     <div class="form-group">
                                       <label class="col-md-4 control-label" for="latitude">Email</label>  
                                       <div class="col-md-8">
-                                        <input id="email" name="email" type="email" placeholder="johndoe@email.com" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" class="form-control input-md" required="">
+                                        <input id="email" name="email" type="email" placeholder="johndoe@email.com" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" class="form-control input-md" >
 
                                       </div>
                                     </div>
                                     <div class="form-group">
                                       <label class="col-md-4 control-label" for="latitude">Coordenação</label>  
                                       <div class="col-md-8">
-                                        <input id="coordenacao" name="coordenacao" type="text" placeholder="Coordenador João Doe" class="form-control input-md" required="">
+                                        <input id="coordenacao" name="coordenacao" type="text" placeholder="Coordenador João Doe" class="form-control input-md"  >
 
                                       </div>
                                     </div>
                                     <div class="form-group">
                                       <label class="col-md-4 control-label" for="latitude">Email Coordenação</label>  
                                       <div class="col-md-8">
-                                        <input id="coordemail" name="coordemail" type="email" placeholder="joao@coord.com.br"  pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" class="form-control input-md" required="">
+                                        <input id="coordemail" name="coordemail" type="email" placeholder="joao@coord.com.br"  pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" class="form-control input-md"  >
 
                                       </div>
                                     </div>
 
-
+  
 
                                     <!-- Button -->
                                    <div class="form-group">

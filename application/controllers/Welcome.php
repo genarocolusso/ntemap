@@ -42,18 +42,30 @@ class Welcome extends CI_Controller {
 		$data['ativos'] = $query2->result_array();
 	}
 
+	for ($i=0; $i < count($data['polos']); $i++) { 
+
+	 	    $data['polos'][$i]['id'] =  $data['polos'][$i]['id']*2+1234; 
+	 		$str = explode('-', $data['polos'][$i]['name']);
+			$url = strtolower(trim($str[0]));
+			$data['polos'][$i]['uri'] = $url."_".$data['polos'][$i]['id'];
+
+	 		//echo $data['polos'][$i]['id']."<br>".$data['polos'][$i]['uri']."<br>";
+	 	  
+	 }  
 	$this->load->view('welcome_message',$data);
 }
 
 
 function poloinfo(){ 
 
-	$data['polos'] = $this->registro_model->polosid( $this->uri->segment(2,0));
-	$data['infocontato'] = $this->registro_model->infodopolo($this->uri->segment(2,0));
-	$data['infopolo'] = $this->curso_model->cursosporpolo( $this->uri->segment(2,0));
-	$data['imagens'] = $this->curso_model->pegaarquivoId( $this->uri->segment(2,0));
+	$poloidreal = ($this->uri->segment(2,0)-1234)/2;
+	$data['polos'] = $this->registro_model->polosid($poloidreal);
+	$data['infocontato'] = $this->registro_model->infodopolo($poloidreal);
+	$data['infopolo'] = $this->curso_model->cursosporpolo($poloidreal);
+	$data['imagens'] = $this->curso_model->pegaarquivoId($poloidreal);
  
-  $data['existearquivo'] = 0;
+  	$data['existearquivo'] = 0;
+
     foreach($data['imagens'] as $key => $value) {  
         
          if( $value['galeria']==0){  

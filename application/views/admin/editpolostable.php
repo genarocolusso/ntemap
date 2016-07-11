@@ -34,7 +34,7 @@ if($polos){ ?>
           <?php } ?>
           <div class="message"> <?= $key['email'] ?> </div>
           <div class="hiddeninfo" idpolo='<?= $key['idpolo'] ?>'  site='<?= $key['site'] ?>' email='<?= $key['email'] ?>' coordenacao='<?= $key['coordenacao'] ?>'
-            coordemail='<?= $key['coordemail'] ?>' contato='<?= $key['contato'] ?>' endereco='<?= $key['endereco'] ?>' name='<?= $key['name'] ?>'> </div>
+            coordemail='<?= $key['coordemail'] ?>' contato='<?= $key['contato'] ?>' nomepolo='<?= $key['nomepolo'] ?>'  endereco='<?= $key['endereco'] ?>' name='<?= $key['name'] ?>'> </div>
 
             <b>
               <?php   

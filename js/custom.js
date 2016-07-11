@@ -36,8 +36,8 @@ $(input).keypress(function(event){
   var infowindow = new google.maps.InfoWindow;
 
 var marker, i;
+for (i = 0; i < locations.length; i++) { 
 
-for (i = 0; i < locations.length; i++) {  
     marker = new google.maps.Marker({
          position: new google.maps.LatLng(locations[i].latitude, locations[i].longitude),
          //icon: 'https://upload.wikimedia.org/wikipedia/commons/thumb/f/f9/Emoji_u1f422.svg/50px-Emoji_u1f422.svg.png',
@@ -81,7 +81,7 @@ for (i = 0; i < locations.length; i++){
    }); 
     google.maps.event.addListener(marker, 'click', (function(marker, i){
          return function() {
-              infowindow.setContent(locations[i].name+'<p><a href="poloinfo/'+locations[i].id+'">Mais Informações</a></p>');
+            infowindow.setContent(locations[i].name+'<p><a href="poloinfo/'+locations[i].id+'">Mais Informações</a></p>');
             infowindow.open(map, marker);
          }
     })(marker, i)); 

@@ -34,7 +34,7 @@
                                      <div class="form-group">
                                       <label class="col-md-4 control-label" for="latitude">Nome do Curso</label>  
                                       <div class="col-md-8">
-                                        <input id="nomecurso" name="nomecurso" type="text" placeholder="" class="form-control input-md" required="">
+                                        <input id="nomecurso" name="nomecurso" type="text" placeholder="" class="form-control input-md"  >
 
                                       </div>
                                     </div>
@@ -44,7 +44,7 @@
                                     <div class="form-group">
                                       <label class="col-md-4 control-label" for="latitude">Número de Alunos</label>  
                                       <div class="col-md-8">
-                                        <input id="numalunos" name="numalunos" type="text" placeholder="40"  class="form-control input-md" required="">
+                                        <input id="numalunos" name="numalunos" type="text" placeholder="40"  class="form-control input-md"  >
 
                                       </div>
                                     </div>

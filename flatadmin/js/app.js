@@ -49,6 +49,7 @@ $(document).on("click", ".message-block",  function(){
   $("#email").val($(".hiddeninfo",this).attr("email"));
   $("#coordenacao").val($(".hiddeninfo",this).attr("coordenacao"));
   $("#site").val($(".hiddeninfo",this).attr("site"));
+  $("#nomepolo").val($(".hiddeninfo",this).attr("nomepolo"));
   $("#coordemail").val($(".hiddeninfo",this).attr("coordemail"));
   $("#selectbasic").val($(".hiddeninfo",this).attr("idpolo"));
   $("#id_polo_click").val($(".hiddeninfo",this).attr("idpolo"));
