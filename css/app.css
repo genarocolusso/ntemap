@@ -71,7 +71,7 @@ h1,h2,h3,h4,h5 {
   min-height: 230px;
   width: 100%;
   z-index: -3;
-  top: 62px; 
+  top: 79px; 
   opacity: 0;
   background: rgba(255, 255, 255, 0.7);
   transition: all 400ms ease-in-out;    
@@ -178,7 +178,7 @@ span.menutx{
   }
   .home__search__icon {
     top: 6px;
-    right: 10px;
+    right: 25px;
     border: none;
     background-color: transparent;
     font-size: 24px;
@@ -191,12 +191,9 @@ span.menutx{
 
     }
     #formsearch{
-      position: absolute; 
-      width: 50%;  
-      top: 40%; 
-      left: 24%;
-      right: 24%;
-      transition: all 0.7s ease;
+      
+      width: 100%;  
+       
     }
 
 

@@ -4,7 +4,19 @@
     <div class="menu">
      
       <div class="row centralmenu">
+  <div class="col-md-12">
+    
 
+<div id="formsearch"  >
+  
+  <input id="searchTextField" name="searchpolo" type="search" placeholder="Buscar polo" class="home__search">
+      
+  <input type="button" value="⌕" id="search_submit" class="home__search__icon">
+ 
+ 
+</div>
+   
+  </div>
   <div class="col-md-12">
       <div class="socialicon ligatodos">
       <i class="fa fa-check-circle-o azul "></i> Todos os Polos
@@ -31,7 +43,7 @@
 <div class="thenav">
   <div class="container">
     <div class="pull-left">
-   <img src="img/NTE.jpg" class="img-responsive" style="max-width: 200px;opacity: 0.7;">
+   <img src="img/marca_site.png" class="img-responsive" style="max-width: 200px;opacity: 0.7;padding: 10px;">
     </div>
     <div class="pull-right" style="height: 60px"> 
    <a id="nav-toggle" href="#"><span></span></a>
@@ -46,15 +58,6 @@
 
  </div>
 
-<div id="formsearch" style="display: none">
-  
-  <input id="searchTextField" name="textinput" type="search" placeholder="Buscar polo" class="home__search">
-      
-  <input type="button" value="⌕" id="search_submit" class="home__search__icon">
- 
- 
-</div>
-   
        
    
       
